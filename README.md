@@ -12,7 +12,7 @@ I build AI and decision systems where **state, evidence, uncertainty and verific
 
 | Project | What the public reference demonstrates |
 | --- | --- |
-| [Agent Forecast Foundry](https://github.com/SamCT86/agent-cashflow-os-case-study) | Bounded post-model verification, input provenance, abstention, structured-output checks, cost and latency guards |
+| [Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study) | Bounded post-model verification, input provenance, abstention, structured-output checks, cost and latency guards |
 | [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) | State readback, reconciliation and safe retry boundaries for agent mutations |
 | [Billable Meetings](https://github.com/SamCT86/billable-meetings-os-case-study) | Deterministic commercial decisions from explicit rules plus authoritative evidence |
 | [ReleaseProof](https://github.com/SamCT86/releaseproof-case-study) | Exact-artifact identity, environment binding, evidence integrity and reproducible rechecks |
