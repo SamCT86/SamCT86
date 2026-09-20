@@ -1,36 +1,43 @@
 # Sarmad Tawfeek
 
-**Applied AI / Agentic Systems Builder — Stockholm, Sweden / Remote**
+**Applied AI / Agentic Systems Builder - Stockholm, Sweden / Remote**
 
-I build AI and decision systems where **state, evidence, uncertainty and verification are first-class engineering constraints**. My current work focuses on agent workflows, evaluation and reliability, AI integrations, internal decision systems, and safe automation around external side effects.
+I build AI systems that have to do more than produce a good-looking answer. My work focuses on what happens around the model: evidence, state, evaluation, failure handling, API integrations, and safe automation.
 
-**Available for:** Applied AI roles · contract builds · AI integrations · technical consulting
+I like turning messy real-world rules into systems that can explain what they know, what they do not know, and why they made a decision.
 
-[Portfolio](https://sarmadtawfeek.se) · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Email](mailto:sarmadtawfeek@gmail.com)
+**Available for:** Applied AI roles | contract builds | AI integrations | technical consulting
 
-## Selected engineering proof
+[Portfolio](https://sarmadtawfeek.se) | [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) | [Email](mailto:sarmadtawfeek@gmail.com)
 
-| Project | What the public reference demonstrates |
+## Selected work
+
+| Project | What it shows |
 | --- | --- |
-| [Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study) | Bounded post-model verification, input provenance, abstention, structured-output checks, cost and latency guards |
-| [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) | State readback, reconciliation and safe retry boundaries for agent mutations |
-| [Billable Meetings](https://github.com/SamCT86/billable-meetings-os-case-study) | Deterministic commercial decisions from explicit rules plus authoritative evidence |
-| [ReleaseProof](https://github.com/SamCT86/releaseproof-case-study) | Exact-artifact identity, environment binding, evidence integrity and reproducible rechecks |
-| [PriceBriefs](https://github.com/SamCT86/pricebriefs-case-study) | Data/source qualification, provenance and refusal states before commercial action |
+| [Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study) | Safer agent runs with structured outputs, evidence binding, abstention, and cost/latency checks |
+| [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) | Reading back real state before trusting or retrying an external action |
+| [Billable Meetings](https://github.com/SamCT86/billable-meetings-os-case-study) | Turning commercial rules and meeting evidence into deterministic billing decisions |
+| [ReleaseProof](https://github.com/SamCT86/releaseproof-case-study) | Proving that release evidence belongs to the exact artifact being shipped |
+| [PriceBriefs](https://github.com/SamCT86/pricebriefs-case-study) | Validating market data before it is allowed to drive a pricing decision |
 
-Each public repository is deliberately narrow and runnable. Broader product implementations, operational data and proprietary workflows remain private.
+Each public repository is intentionally small enough to review and run. The broader product implementations, operational data, and proprietary workflows stay private.
 
-## Engineering focus
+## What I work with
 
-- Applied AI runtimes and agent workflows
-- Evaluations, observability, abstention and reliability gates
-- API integrations, internal tools and deterministic decision systems
-- TypeScript / Node.js · React / Next.js · Supabase / Postgres · OpenAI APIs · GitHub Actions
+- AI agents and LLM API integrations
+- evaluations, observability, abstention, and reliability checks
+- deterministic decision systems and internal tools
+- TypeScript / Node.js
+- Python / FastAPI
+- React / Next.js
+- Supabase / Postgres
+- OpenAI APIs
+- GitHub Actions
 
 ## How I work
 
-`real constraint → bounded system → adversarial verification → observable proof`
+I start with the real failure mode, define what the system is allowed to trust, build the smallest useful implementation, and then try to break it with tests and bad inputs.
 
-I use AI tools heavily in implementation, but I remain accountable for problem framing, architecture, acceptance criteria, debugging, tests and release decisions.
+I use AI tools heavily during implementation, but I remain responsible for the architecture, acceptance criteria, debugging, tests, and release decisions.
 
-If you have an AI or automation problem that keeps surviving the obvious fixes, [send me the problem](mailto:sarmadtawfeek@gmail.com).
+If you have an AI or automation problem where reliability matters as much as the model output, [send me the problem](mailto:sarmadtawfeek@gmail.com).
