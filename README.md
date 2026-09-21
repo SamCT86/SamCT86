@@ -6,7 +6,7 @@ I build AI systems that have to do more than produce a good-looking answer. My w
 
 I like turning messy real-world rules into systems that can explain what they know, what they do not know, and why they made a decision.
 
-**Available for:** Applied AI roles | contract builds | AI integrations | technical consulting
+**Available for:** bounded AI contract work | AI integrations | evaluation/reliability work | technical consulting | selective Applied AI roles
 
 [Portfolio](https://sarmadtawfeek.se) | [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) | [Email](mailto:sarmadtawfeek@gmail.com)
 
