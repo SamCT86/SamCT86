@@ -10,11 +10,16 @@ I like turning messy real-world rules into systems that can explain what they kn
 
 [Portfolio](https://sarmadtawfeek.se) | [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) | [Email](mailto:sarmadtawfeek@gmail.com)
 
-## Selected work
+## Flagship proof
+
+### [Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study)
+
+A runnable reference for safer agent runs: strict structured output, evidence binding, explicit abstention, provider-state checks, cost/latency bounds, sanitized journaling, tests and offline evals.
+
+## Supporting proof
 
 | Project | What it shows |
 | --- | --- |
-| [Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study) | Safer agent runs with structured outputs, evidence binding, abstention, and cost/latency checks |
 | [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) | Reading back real state before trusting or retrying an external action |
 | [Billable Meetings](https://github.com/SamCT86/billable-meetings-os-case-study) | Turning commercial rules and meeting evidence into deterministic billing decisions |
 | [ReleaseProof](https://github.com/SamCT86/releaseproof-case-study) | Proving that release evidence belongs to the exact artifact being shipped |
