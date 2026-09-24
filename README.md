@@ -1,61 +1,71 @@
 # Sarmad Tawfeek
 
-**Applied AI / Agentic Systems Builder — Stockholm, Sweden / Remote**
+**Founder & Applied AI Systems Builder — Stockholm, Sweden / Remote**
 
-Most of the AI problems I enjoy start after the first demo works. An API times out. Evidence is incomplete. Two systems disagree about state. A model sounds confident, but the surrounding workflow still has no good reason to trust the result.
+I build reliable AI systems for workflows where mistakes cost money.
 
-That is the kind of engineering I keep coming back to: explicit state, evidence, failure handling, evals, and automation that knows when to stop instead of inventing certainty.
+I audit, design and build AI workflows, agents and automation where cost leakage, brittle handoffs or unclear outcomes create real operational risk. My bias is simple: make the important state explicit, preserve uncertainty when evidence is weak, and verify what actually happened before a system acts again.
 
-I use AI tools every day. They make implementation faster, but they do not get the final vote. I own the problem framing, constraints, debugging, tests, and release decision.
+**Start small:** [AI Workflow Audit](mailto:sarmadtawfeek@gmail.com?subject=AI%20Workflow%20Audit&body=Hi%20Sarmad%2C%0A%0AThe%20workflow%20I%20want%20to%20improve%20is%3A%20) — one workflow, one real constraint, one prioritized improvement path.
 
-**Open to:** bounded Applied AI contract work, AI integrations, evaluation/reliability work, technical consulting, and selective Applied AI roles.
+[Website](https://sarmadtawfeek.se) · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Email](mailto:sarmadtawfeek@gmail.com)
 
-[Portfolio](https://sarmadtawfeek.se) · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Email](mailto:sarmadtawfeek@gmail.com)
+## Selected proof
 
-## Start here
+### [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) — verify what actually happened before retrying
 
-### [Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study)
+An API timeout does not prove that an external action failed. This public reference binds task, attempt and observed state before allowing `VERIFIED`, `FAILED` or `UNKNOWN` — and blocks blind retry when reality is still ambiguous.
 
-If you want to understand how I think about AI systems, this is the repo I would open first.
+**Shows:** state verification · reconciliation before retry · fail-closed evidence boundaries
 
-It asks a simple question: **when a model returns an answer, what still has to be true before the surrounding system should trust the run?**
+### [Billable Meetings](https://github.com/SamCT86/billable-meetings-os-case-study) — turn meeting evidence into defensible billing decisions
 
-The public reference covers structured output, evidence binding, explicit abstention, provider-state checks, cost/latency limits, sanitized persistence, replay/concurrency boundaries, tests, and offline evals.
+A live product plus a bounded public decision-engine reference. Agreement rules and meeting evidence become `BILLABLE`, `NON_BILLABLE` or `REVIEW`; missing or contradictory evidence stays visible instead of being forced into a yes/no answer.
 
-I kept it bounded on purpose so another engineer can follow the execution path and challenge the assumptions without having to take a production-scale claim on faith.
+[Live product](https://billablemeetings.com) · [Public reference](https://github.com/SamCT86/billable-meetings-os-case-study)
 
-If you only have a few minutes, start with the runtime path and its tests rather than the prose.
+**Shows:** commercial rule modeling · evidence traceability · explicit review states
 
-## Other work
+### [ReleaseProof](https://github.com/SamCT86/releaseproof-case-study) — verify the exact artifact that will ship
 
-| Project | The problem I was trying to make explicit |
-| --- | --- |
-| [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) | An API timeout does not prove that an external action failed. Read back reality before retrying. |
-| [Billable Meetings](https://github.com/SamCT86/billable-meetings-os-case-study) | Commercial rules become messy when evidence is incomplete or contradictory. Preserve a real review state instead of forcing a yes/no answer. |
-| [ReleaseProof](https://github.com/SamCT86/releaseproof-case-study) | “Tests passed” is weak evidence if you cannot prove those tests belong to the exact artifact being shipped. |
-| [PriceBriefs](https://github.com/SamCT86/pricebriefs-case-study) | A price difference is not useful until the product, source, currency, availability, and freshness are trustworthy enough to compare. |
+A release check should not say `PASS` unless its evidence belongs to the exact artifact and environment being judged. The public reference fails closed on cross-artifact, incomplete or mismatched evidence.
 
-These are intentionally bounded public engineering references with synthetic data. They are there to make specific decisions and failure boundaries inspectable — not to pretend that five full production systems are open-source. Private product code, credentials, customer/operational data, and proprietary workflows stay private.
+**Shows:** artifact identity · evidence binding · explicit `INCONCLUSIVE`
 
-## Things I care about in code
+### More public engineering references
 
-- If an external action times out, do not assume nothing happened.
-- If the evidence is incomplete, do not turn uncertainty into success because the workflow wants an answer.
-- If a system says something passed, be able to show exactly what was tested and what the result belongs to.
-- Make important failure states visible enough that another engineer can challenge the decision without trusting the author’s confidence.
+- [Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study) — checks evidence, structured output, provider state, cost, latency and persistence boundaries before accepting an AI run.
+- [PriceBriefs](https://github.com/SamCT86/pricebriefs-case-study) — refuses weak competitive-price comparisons until identity, currency, availability, source qualification and freshness are good enough for the decision.
 
-Those principles are not unique to AI. I have found them useful anywhere software crosses a boundary into another system or into a decision that matters.
+## What these repositories are
 
-## How I got here
+The public case studies are intentionally bounded, runnable engineering references. They use synthetic data where appropriate and are designed so another engineer can inspect the mechanism, tests and failure boundaries directly.
 
-Before my current Applied AI work, I built and operated automated FX trading systems in live markets from 2015–2020. That work involved execution logic and portfolio-risk decisions where software behavior had direct financial consequences. It is probably one reason I care so much about observed state, explicit risk boundaries, and knowing what actually happened instead of what a system hoped happened.
+They are **not** dumps of private product code, customer data or proprietary workflows, and they are not presented as proof of product-market fit or customer ROI.
 
-There is a historical third-party performance record on [Myfxbook](https://www.myfxbook.com/members/GloryForex). I include it as background, not as a claim about my current AI work.
+That boundary is deliberate: **proof before social proof, and evidence before stronger claims.**
 
-## Tools I use
+## What I help with
+
+- **AI Workflow Audit** — map one workflow, find where time, cost or reliability leaks, and identify the smallest useful improvement path.
+- **Reliable automation** — agents, integrations and internal tools with explicit handoffs, failure states and recovery paths.
+- **Verification & reliability** — evidence, evals, readback and bounded decision rules when “probably worked” is not good enough.
+
+## How I work
+
+1. Find the real constraint before choosing the technology.
+2. Make uncertainty and failure states explicit.
+3. Test and verify the state that actually matters.
+4. Build the smallest useful system that earns the next stronger claim.
+
+I use AI tools heavily during implementation. They increase speed; they do not get the final vote. I remain responsible for framing, architecture, constraints, debugging, tests and release decisions.
+
+## Background
+
+Before my current Applied AI work, I built and operated automated FX trading systems in live markets from 2015–2020. That work involved execution and risk decisions where software behavior had direct financial consequences, which is one reason I care about observed state and explicit risk boundaries. A historical third-party performance record is available on [Myfxbook](https://www.myfxbook.com/members/GloryForex); I include it as background, not as a claim about my current AI work.
+
+## Stack
 
 TypeScript / Node.js · Python / FastAPI · React / Next.js · Postgres / Supabase · OpenAI APIs · GitHub Actions
 
-Tools change. The part I try to keep consistent is the reasoning around state, evidence, failure, and verification.
-
-If you are working on an AI or automation problem where “probably worked” is not a good enough answer, [send me the problem](mailto:sarmadtawfeek@gmail.com).
+If you have one AI or automation workflow where cost, manual work or reliability is becoming a problem, [send me the workflow](mailto:sarmadtawfeek@gmail.com?subject=AI%20Workflow%20Audit&body=Hi%20Sarmad%2C%0A%0AThe%20workflow%20I%20want%20to%20improve%20is%3A%20).
