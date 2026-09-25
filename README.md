@@ -65,7 +65,9 @@ AI gives me implementation leverage. My value is in the **problem framing, syste
 
 ## Background
 
-Before my current AI work, I built and operated automated FX trading systems in live markets from 2015–2020. That work involved execution and risk decisions where software behavior had direct financial consequences, which is one reason I care about observed state and explicit risk boundaries. A historical third-party performance record is available on [Myfxbook](https://www.myfxbook.com/members/GloryForex); I include it as background, not as a claim about my current AI work.
+Before my current AI work, I spent years in investigation and evidence-heavy operational roles, with earlier studies in IT forensics and information security. That background shaped how I think about evidence integrity, uncertainty, failure boundaries and decisions that should not be forced when the underlying state is unclear.
+
+From 2015–2020, I also built and operated automated FX trading systems in live markets. That work involved execution and risk decisions where software behavior had direct financial consequences, which is one reason I care about observed state and explicit risk boundaries. A historical third-party performance record is available on [Myfxbook](https://www.myfxbook.com/members/GloryForex); I include it as background, not as a claim about my current AI work.
 
 ## Implementation environment
 
