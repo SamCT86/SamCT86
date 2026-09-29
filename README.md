@@ -23,6 +23,14 @@ My role is to frame the business problem, set the constraints, direct AI and sof
 
 I use paid work as commercial proof and the public repositories below as inspectable technical proof.
 
+## External open-source proof
+
+Merged contributions to third-party repositories:
+
+- **gombit-dev/gombit — [PR #521](https://github.com/gombit-dev/gombit/pull/521):** fixed `Dispatcher.DispatchAt` mutating caller-owned option storage and added regression coverage. Code-owner approved; current-head CI passed 26/26 jobs.
+- **LunaStev/binlayout — [PR #39](https://github.com/LunaStev/binlayout/pull/39):** connected the publishing result to the manual release flow.
+- **LunaStev/binlayout — [PR #35](https://github.com/LunaStev/binlayout/pull/35):** added offline release-workflow regression coverage.
+
 ## Selected technical proof
 
 ### [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study)
