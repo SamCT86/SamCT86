@@ -27,6 +27,7 @@ I use paid work as commercial proof and the public repositories below as inspect
 
 Merged contributions to third-party repositories:
 
+- **gombit-dev/gombit — [PR #525](https://github.com/gombit-dev/gombit/pull/525):** fixed unbounded crash redelivery so a poison job cannot keep rerunning past `MaxAttempts`. Code-owner approved; current-head CI passed 26/26 jobs.
 - **gombit-dev/gombit — [PR #521](https://github.com/gombit-dev/gombit/pull/521):** fixed `Dispatcher.DispatchAt` mutating caller-owned option storage and added regression coverage. Code-owner approved; current-head CI passed 26/26 jobs.
 - **LunaStev/binlayout — [PR #39](https://github.com/LunaStev/binlayout/pull/39):** connected the publishing result to the manual release flow.
 - **LunaStev/binlayout — [PR #35](https://github.com/LunaStev/binlayout/pull/35):** added offline release-workflow regression coverage.
