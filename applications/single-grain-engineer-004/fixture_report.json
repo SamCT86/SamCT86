@@ -1,0 +1,25 @@
+{
+  "source_commit": "4b719e4501c8ff98fd3e641c46d3bffe34b9aaa5",
+  "sha256": "1aeb24b415009e89fcf8acb5a178410faf216dc17b16920d9849ecc8bbb24235",
+  "valid_rows": 24,
+  "parse_errors": [
+    {"line": 21, "event_hint": "evt-0020", "finding": "malformed JSON: missing closing delimiter"}
+  ],
+  "duplicate_event_ids": {"evt-0002": 2},
+  "negative_event_to_receive_delta": [
+    {"event_id": "evt-0005", "delta_s": -47.19},
+    {"event_id": "evt-0006", "delta_s": -3900.0},
+    {"event_id": "evt-0016", "delta_s": -31535999.788}
+  ],
+  "strong_future_clock_anomalies": ["evt-0006", "evt-0016"],
+  "missing_tenant_ids": ["evt-0011"],
+  "schema_drift_event_ids": ["evt-0009"],
+  "pii_in_properties_event_ids": ["evt-0007"],
+  "bot_like_event_ids": ["evt-0012", "evt-0013", "evt-0014", "evt-0015"],
+  "privacy_request_event_ids": ["evt-0017"],
+  "identity_events": [
+    {"event_id": "evt-0003", "anonymous_id": "anon-9f2", "user_id": "u-5511"},
+    {"event_id": "evt-0008", "anonymous_id": "anon-c81", "user_id": "u-2209"},
+    {"event_id": "evt-0022", "anonymous_id": "anon-3d0", "user_id": "u-7304"}
+  ]
+}
