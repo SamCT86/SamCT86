@@ -6,6 +6,10 @@ I help turn expensive, manual or unreliable workflows into practical AI-assisted
 
 My role is to frame the business problem, set the constraints, direct AI and software execution, verify the result and decide what is ready to use.
 
+**Open to:** outcome-based consulting · AI systems/integration roles · technical product/system ownership · remote collaboration.
+
+This GitHub is evidence-first: public repositories and third-party contributions show mechanisms, tests, failure boundaries and review outcomes — not just a list of tools.
+
 **Start small:** [AI Workflow Audit](mailto:sarmadtawfeek@gmail.com?subject=AI%20Workflow%20Audit&body=Hi%20Sarmad%2C%0A%0AThe%20workflow%20I%20want%20to%20improve%20is%3A%20). One workflow, one real constraint, one prioritized improvement path.
 
 [Website](https://sarmadtawfeek.se) · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Email](mailto:sarmadtawfeek@gmail.com)
@@ -27,6 +31,7 @@ I use paid work as commercial proof and the public repositories below as inspect
 
 Merged contributions to third-party repositories:
 
+- **gombit-dev/gombit — [PR #534](https://github.com/gombit-dev/gombit/pull/534):** fixed `jobs retry --all` reprocessing live re-failures, then addressed a maintainer-found peak-read regression with bounded pagination + regression coverage. Maintainer requested changes, verified the remediation, approved it, and merged after CI 26/26.
 - **gombit-dev/gombit — [PR #525](https://github.com/gombit-dev/gombit/pull/525):** fixed unbounded crash redelivery so a poison job cannot keep rerunning past `MaxAttempts`. Code-owner approved; current-head CI passed 26/26 jobs.
 - **gombit-dev/gombit — [PR #521](https://github.com/gombit-dev/gombit/pull/521):** fixed `Dispatcher.DispatchAt` mutating caller-owned option storage and added regression coverage. Code-owner approved; current-head CI passed 26/26 jobs.
 - **LunaStev/binlayout — [PR #39](https://github.com/LunaStev/binlayout/pull/39):** connected the publishing result to the manual release flow.
