@@ -15,6 +15,8 @@ Other internal products and experiments are intentionally kept private and used 
 
 ### [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study)
 
+[![MachineOutcome CI](https://github.com/SamCT86/machineoutcome-case-study/actions/workflows/verify-reference.yml/badge.svg)](https://github.com/SamCT86/machineoutcome-case-study/actions/workflows/verify-reference.yml)
+
 MachineOutcome focuses on a critical automation problem: an attempted action is not the same thing as a verified outcome.
 
 The public reference demonstrates reconciliation before retry, task/attempt-bound evidence, explicit `VERIFIED | FAILED | UNKNOWN` states, and refusal to blindly replay ambiguous external mutations.
@@ -22,6 +24,8 @@ The public reference demonstrates reconciliation before retry, task/attempt-boun
 **Public proof:** [machineoutcome-case-study](https://github.com/SamCT86/machineoutcome-case-study)
 
 ### [Agent Cash Cow OS](https://github.com/SamCT86/agent-forecast-foundry-case-study)
+
+[![Agent Cash Cow OS CI](https://github.com/SamCT86/agent-forecast-foundry-case-study/actions/workflows/reference-tests.yml/badge.svg)](https://github.com/SamCT86/agent-forecast-foundry-case-study/actions/workflows/reference-tests.yml)
 
 Agent Cash Cow OS is the second commercial product track. Its current product hypothesis centers on forecast evidence and measurable decision advantage for autonomous agents.
 
