@@ -8,6 +8,8 @@ I build and operate AI-native systems with an evidence-first approach: explicit 
 
 Other internal products and experiments are intentionally kept private and used as indie-hacking / R&D assets rather than presented as commercial portfolio products.
 
+GitHub may still surface older public engineering references in its automatic **Popular repositories** section. Those are historical technical proof only; they are not part of the current commercial product portfolio.
+
 [Website](https://sarmadtawfeek.se) · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Email](mailto:sarmadtawfeek@gmail.com)
 
 ## Commercial products
