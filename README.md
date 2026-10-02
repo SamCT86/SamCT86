@@ -32,6 +32,7 @@ The public reference exposes only a bounded engineering pattern for evidence, st
 
 Merged contributions to third-party repositories remain part of the engineering track record, but they are not commercial products.
 
+- **gombit-dev/gombit — [PR #541](https://github.com/gombit-dev/gombit/pull/541):** made three test-only nil guards explicit so staticcheck could prove the following pointer dereferences unreachable; upstream CI passed, the maintainer reviewed the process contract, then approved and merged it.
 - **gombit-dev/gombit — [PR #534](https://github.com/gombit-dev/gombit/pull/534):** fixed `jobs retry --all` reprocessing live re-failures, then addressed a maintainer-found peak-read regression with bounded pagination + regression coverage.
 - **gombit-dev/gombit — [PR #525](https://github.com/gombit-dev/gombit/pull/525):** fixed unbounded crash redelivery so a poison job cannot keep rerunning past `MaxAttempts`.
 - **gombit-dev/gombit — [PR #521](https://github.com/gombit-dev/gombit/pull/521):** fixed `Dispatcher.DispatchAt` mutating caller-owned option storage and added regression coverage.
