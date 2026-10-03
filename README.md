@@ -27,11 +27,13 @@ The public reference demonstrates reconciliation before retry, task/attempt-boun
 
 [![Agent Cash Cow OS CI](https://github.com/SamCT86/agent-forecast-foundry-case-study/actions/workflows/reference-tests.yml/badge.svg)](https://github.com/SamCT86/agent-forecast-foundry-case-study/actions/workflows/reference-tests.yml)
 
-Agent Cash Cow OS is the second commercial product track. Its current product hypothesis centers on forecast evidence and measurable decision advantage for autonomous agents.
+Agent Cash Cow OS is the second commercial product track. Its public proof now covers two bounded surfaces: synthetic agent-commerce failure handling and forecast-evidence discipline for autonomous agents.
 
-The public reference exposes only a bounded engineering pattern for evidence, structured output, provider-state checks, cost/latency limits and fail-closed acceptance. The production OS, orchestration, benchmark logic, live evidence and commercial controls remain private.
+**Interactive proof:** [Agent Cash Cow OS — Transaction Lab](https://www.sarmadtawfeek.com/agent-cash-cow) — a synthetic browser-only lab for timeout/readback, replay, authorization and outcome/settlement decisions. No account or real money is required.
 
-**Public proof:** [Agent Cash Cow OS — Forecast Evidence reference](https://github.com/SamCT86/agent-forecast-foundry-case-study)
+The GitHub reference exposes a separate bounded engineering pattern for evidence, structured output, provider-state checks, cost/latency limits and fail-closed acceptance. The production OS, orchestration, payment/provider integrations, benchmark logic, live evidence and commercial controls remain private.
+
+**GitHub proof:** [Agent Cash Cow OS — Forecast Evidence reference](https://github.com/SamCT86/agent-forecast-foundry-case-study)
 
 ## External open-source proof
 
