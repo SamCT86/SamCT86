@@ -22,16 +22,8 @@ These are the same bounded entry points presented on the live portfolio:
 - **Fix sprint** — when the right problem is already clear. One bounded change is implemented against a pre-agreed metric and the outcome is verified.
 - **Reliability review** — when AI or integrations already run but you do not fully trust them. You get failure, duplicate-action and handoff testing plus a prioritized action list.
 
-Start with 2–3 sentences about what is slow, expensive or unreliable. [Portfolio](https://sarmadtawfeek.se) · [Email](mailto:sarmadtawfeek@gmail.com) · [Upwork](https://www.upwork.com/freelancers/~01767de6afc5f37c09)
+Start with 2–3 sentences about what is slow, expensive or unreliable. [Portfolio](https://www.sarmadtawfeek.com) · [Email](mailto:sarmadtawfeek@gmail.com)
 
-## Paid client evidence
-
-The live portfolio links two completed Upwork contracts:
-
-- **Local SEO Specialist | On-Page Expert | Boost Ranking** — completed Upwork contract.
-- **Google Page Speed - LCP Advice** — completed Upwork contract.
-
-These prove completed paid client work, **not** paid adoption or ROI for MachineOutcome or Agent Cash Cow OS. [View the Upwork profile](https://www.upwork.com/freelancers/~01767de6afc5f37c09).
 
 [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Email](mailto:sarmadtawfeek@gmail.com)
 
