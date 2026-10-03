@@ -9,7 +9,7 @@ I build and operate AI-native systems with an evidence-first approach: explicit 
 ## Start here if you're evaluating my work
 
 - **MachineOutcome** — inspect how I handle ambiguous external side effects before retrying. Relevant to agent/workflow systems that can create duplicate writes, deployments, payments or other irreversible effects.
-- **Agent Cash Cow OS** — start with the interactive Transaction Lab to see synthetic timeout/readback/replay/outcome handling, then use the GitHub Forecast Evidence reference for the verification/runtime pattern behind the broader product direction.
+- **Agent Cash Cow OS** — start with the interactive Transaction Lab's buyer-first 15-second timeout walkthrough and guided failure run, then use the GitHub Forecast Evidence reference for the verification/runtime pattern behind the broader product direction.
 - **Current engagement fit / next step** — use [email](mailto:sarmadtawfeek@gmail.com) or [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) if you want to discuss a concrete AI systems problem, technical evaluation or collaboration. I do not claim paid adoption, customer ROI or market traction here unless it is independently verified.
 
 Other internal products and experiments are intentionally kept private and used as indie-hacking / R&D assets rather than presented as commercial portfolio products.
