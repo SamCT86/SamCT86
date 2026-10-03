@@ -9,11 +9,29 @@ I build and operate AI-native systems with an evidence-first approach: explicit 
 ## Start here if you're evaluating my work
 
 - **MachineOutcome** — inspect how I handle ambiguous external side effects before retrying. Relevant to agent/workflow systems that can create duplicate writes, deployments, payments or other irreversible effects.
-- **Agent Cash Cow OS** — start with the interactive Transaction Lab's buyer-first 15-second timeout walkthrough and guided failure run, then use the GitHub Forecast Evidence reference for the verification/runtime pattern behind the broader product direction.
-- **Current engagement fit / next step** — use [email](mailto:sarmadtawfeek@gmail.com) or [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) if you want to discuss a concrete AI systems problem, technical evaluation or collaboration. I do not claim paid adoption, customer ROI or market traction here unless it is independently verified.
+- **Agent Cash Cow OS** — start with the interactive Transaction Lab's buyer-first 15-second timeout walkthrough and guided failure run, inspect the public transaction-reliability source proof, then use the Forecast Evidence reference for the separate verification/runtime pattern behind the broader product direction.
+- **Current engagement fit / next step** — if one workflow is slow, expensive or unreliable, send 2–3 sentences by [email](mailto:sarmadtawfeek@gmail.com). No technical brief or meeting is required to start, and no sensitive data should be sent yet. I return the next useful step; scope and price are agreed before anything is ordered. I do not claim paid adoption, customer ROI or market traction for MachineOutcome or Agent Cash Cow OS unless it is independently verified.
 
 Other internal products and experiments are intentionally kept private and used as indie-hacking / R&D assets rather than presented as commercial portfolio products.
 
+## Current ways to start
+
+These are the same bounded entry points presented on the live portfolio:
+
+- **Workflow check** — when you need to know whether a workflow problem is worth solving. You get a baseline, the biggest leak, estimated potential and a recommended next step.
+- **Fix sprint** — when the right problem is already clear. One bounded change is implemented against a pre-agreed metric and the outcome is verified.
+- **Reliability review** — when AI or integrations already run but you do not fully trust them. You get failure, duplicate-action and handoff testing plus a prioritized action list.
+
+Start with 2–3 sentences about what is slow, expensive or unreliable. [Portfolio](https://sarmadtawfeek.se) · [Email](mailto:sarmadtawfeek@gmail.com) · [Upwork](https://www.upwork.com/freelancers/~01767de6afc5f37c09)
+
+## Paid client evidence
+
+The live portfolio links two completed Upwork contracts:
+
+- **Local SEO Specialist | On-Page Expert | Boost Ranking** — completed Upwork contract.
+- **Google Page Speed - LCP Advice** — completed Upwork contract.
+
+These prove completed paid client work, **not** paid adoption or ROI for MachineOutcome or Agent Cash Cow OS. [View the Upwork profile](https://www.upwork.com/freelancers/~01767de6afc5f37c09).
 
 [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Email](mailto:sarmadtawfeek@gmail.com)
 
@@ -38,6 +56,8 @@ Agent Cash Cow OS is the second commercial product track. Its public proof now c
 **Interactive proof:** [Agent Cash Cow OS — Transaction Lab](https://www.sarmadtawfeek.com/agent-cash-cow) — a synthetic browser-only lab for timeout/readback, replay, authorization and outcome/settlement decisions. No account or real money is required.
 
 The GitHub reference exposes a separate bounded engineering pattern for evidence, structured output, provider-state checks, cost/latency limits and fail-closed acceptance. The production OS, orchestration, payment/provider integrations, benchmark logic, live evidence and commercial controls remain private.
+
+**Public source proof:** [Agent Cash Cow OS — Transaction reliability proof](https://github.com/SamCT86/agent-cash-cow-os) — synthetic failure handling, proof receipts, deterministic tests and explicit public/private boundaries.
 
 **GitHub proof:** [Agent Cash Cow OS — Forecast Evidence reference](https://github.com/SamCT86/agent-forecast-foundry-case-study)
 
