@@ -4,6 +4,10 @@
 
 I build and operate AI-native systems with an evidence-first approach: explicit acceptance criteria, real provider readback, fail-closed behavior, and verified outcomes instead of activity claims.
 
+> 🏆 **External performance proof — Yukon / Eigen Labs QSB**<br>
+> **Top 3.1% (#47/1,515)** of officially scored submissions · **1.015B verified candidates/s** on RTX 4090 · **0.54% from the promoted best** · outperformed **96.9% of scored submissions**.<br>
+> [Inspect the verified result →](proof/yukon-qsb-benchmark.md)
+
 **Commercial product focus:** MachineOutcome and Agent Cash Cow OS.
 
 ## Start here if you're evaluating my work
