@@ -64,6 +64,10 @@ Merged contributions to third-party repositories remain part of the engineering 
 - **LunaStev/binlayout — [PR #39](https://github.com/LunaStev/binlayout/pull/39):** connected the publishing result to the manual release flow.
 - **LunaStev/binlayout — [PR #35](https://github.com/LunaStev/binlayout/pull/35):** added offline release-workflow regression coverage.
 
+## External benchmark proof
+
+- **Yukon / Eigen Labs QSB pinning benchmark — official RTX 4090 evaluation:** **1,015,429,342 verified candidates/s**. At the 2026-10-04 readback, this ranked **#47 of 1,515 officially scored submissions (top 3.1%)**. The result was **0.54% below the promoted best**, so it was rejected for promotion on performance — not for correctness. This is a submission ranking, not a unique-participant ranking. [Inspect the bounded proof and methodology](proof/yukon-qsb-benchmark.md) · [Official benchmark](https://www.yukon.org/qsb)
+
 ## How I work
 
 1. Define the real outcome and the evidence needed to prove it.
