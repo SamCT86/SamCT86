@@ -5,8 +5,8 @@
 I build and operate AI-native systems with an evidence-first approach: explicit acceptance criteria, real provider readback, fail-closed behavior, and verified outcomes instead of activity claims.
 
 > 🏆 **External performance proof — Yukon / Eigen Labs QSB**<br>
-> **Top 3.1% (#47/1,515)** of officially scored submissions · **1.015B verified candidates/s** on RTX 4090 · **0.54% from the promoted best** · outperformed **96.9% of scored submissions**.<br>
-> [Inspect the verified result →](proof/yukon-qsb-benchmark.md)
+> **1.015B verified candidates/s on NVIDIA RTX 4090 · #47/1,515 scored submissions (top 3.1%) · 0.54% from the then-promoted best** at the 2026-10-04 snapshot.<br>
+> [Inspect the upstream-verifiable benchmark evidence →](proof/yukon-qsb-benchmark.md)
 
 **Commercial product focus:** MachineOutcome and Agent Cash Cow OS.
 
@@ -70,7 +70,7 @@ Merged contributions to third-party repositories remain part of the engineering 
 
 ## External benchmark proof
 
-- **Yukon / Eigen Labs QSB pinning benchmark — official RTX 4090 evaluation:** **1,015,429,342 verified candidates/s**. At the 2026-10-04 readback, this ranked **#47 of 1,515 officially scored submissions (top 3.1%)**. The result was **0.54% below the promoted best**, so it was rejected for promotion on performance — not for correctness. This is a submission ranking, not a unique-participant ranking. [Inspect the bounded proof and methodology](proof/yukon-qsb-benchmark.md) · [Official benchmark](https://www.yukon.org/qsb)
+- **Yukon / Eigen Labs QSB pinning — independently verified RTX 4090 evaluation:** **1,015,429,342 verified candidates/s**. At the 2026-10-04 snapshot, the result ranked **#47 of 1,515 scored submissions (top 3.1%)**, **0.54% below the then-promoted best**. Yukon verified and scored the run successfully; it simply did not replace the promoted record. [Inspect the evidence chain and exact upstream validation commit](proof/yukon-qsb-benchmark.md) · [Official benchmark](https://www.yukon.org/qsb)
 
 ## How I work
 
