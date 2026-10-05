@@ -16,7 +16,7 @@ This page preserves the evidence for one externally evaluated CUDA optimization 
 | Official score | **1,015,429,342 verified candidates/s** |
 | Provider verification | **`verified = true`** |
 | Verified hits | **145,470** |
-| Provider-scored candidates | **1,220,290,805,760** |
+| Candidates (provider metric) | **1,220,290,805,760** |
 | Ranked elapsed time | **1,201.7486 s** |
 | Then-promoted best | **1,020,930,406 verified candidates/s** |
 | Gap to promoted best | **5,501,064 candidates/s (0.5388%)** |
