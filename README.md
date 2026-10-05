@@ -8,6 +8,10 @@ I build and operate AI-native systems with an evidence-first approach: explicit 
 > **1.015B verified candidates/s on NVIDIA RTX 4090 · #47/1,515 scored submissions (top 3.1%) · 0.54% from the then-promoted best** at the 2026-10-04 snapshot.<br>
 > [Inspect the upstream-verifiable benchmark evidence →](proof/yukon-qsb-benchmark.md)
 
+> ⚙️ **External performance proof — Paradigm / ScoreBench Anthropic Take-Home**<br>
+> **1,113 cycles · 132.7× cycle speedup vs the freshly verified starter · official provider rank #86 · ~top 15% of 565 participants** at the 2026-10-05 snapshot.<br>
+> [Inspect the spoiler-safe official-score evidence →](proof/scorebench-anthropic-vliw.md)
+
 **Commercial product focus:** MachineOutcome and Agent Cash Cow OS.
 
 ## Start here if you're evaluating my work
@@ -71,6 +75,7 @@ Merged contributions to third-party repositories remain part of the engineering 
 ## External benchmark proof
 
 - **Yukon / Eigen Labs QSB pinning — independently verified RTX 4090 evaluation:** **1,015,429,342 verified candidates/s**. At the 2026-10-04 snapshot, the result ranked **#47 of 1,515 scored submissions (top 3.1%)**, **0.54% below the then-promoted best**. Yukon verified and scored the run successfully; it simply did not replace the promoted record. [Inspect the evidence chain and exact upstream validation commit](proof/yukon-qsb-benchmark.md) · [Official benchmark](https://www.yukon.org/qsb)
+- **Paradigm / ScoreBench — Anthropic Take-Home:** official **1,113-cycle** result, **132.7×** cycle speedup versus a freshly reproduced 147,734-cycle starter, provider rank **#86** at the 2026-10-05 snapshot. The leaderboard contained 565 actual participant rows after excluding five reference baselines; ordered participant position was **85 / 565 (~top 15%)**. [Inspect the spoiler-safe score, rank and verification evidence](proof/scorebench-anthropic-vliw.md) · [Official challenge](https://www.paradigm.xyz/puzzles/anthropic-challenge)
 
 ## How I work
 
