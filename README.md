@@ -14,6 +14,9 @@ I’m exploring how AI agents can handle payments without paying twice or guessi
 
 Both demos use made-up data. They show the ideas in action; they aren't claims of customer results. I keep the full systems private.
 
+**[TrustPR](https://github.com/SamCT86/trustpr-action)**  
+A read-only GitHub Action that turns pull-request changes and GitHub evidence into a receipt, showing what is confirmed and what remains unknown. Its [v0.1.0 prerelease](https://github.com/SamCT86/trustpr-action/releases/tag/v0.1.0) was tested on real public consumer PR events. It doesn't certify a PR as safe to merge or claim customer adoption.
+
 ## A couple of results
 
 I work with specialist AI agents on the engineering, then check the results.
