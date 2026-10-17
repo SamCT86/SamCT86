@@ -1,43 +1,29 @@
-# Hi, I'm Sarmad
+# Hi, I'm Sam
 
-I build products and solve technical problems with AI agents. I'm based in Stockholm and work remotely too.
+I'm based in Stockholm. I enjoy learning new things and working with other people. I like having something to work towards together, even if we start with just a question.
 
-My focus is simple: make everyday workflows easier to run and easier to trust.
+Earlier customer-facing and technical jobs taught me to listen, pay attention to details and take responsibility. These days I spend time exploring ideas through personal digital projects.
 
-## What I'm building
-
-**[MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study)**  
-An automation can time out after it has already done the job. MachineOutcome checks what happened before trying again. [Try the demo](https://samct86.github.io/machineoutcome-case-study/).
-
-**[Agent Cash Cow OS](https://github.com/SamCT86/agent-cash-cow-os)**  
-I’m exploring how AI agents can handle payments without paying twice or guessing when something goes wrong. [Try the Transaction Lab](https://www.sarmadtawfeek.com/agent-cash-cow).
-
-Both demos use made-up data. They show the ideas in action; they aren't claims of customer results. I keep the full systems private.
+## A few projects
 
 **[TrustPR](https://github.com/SamCT86/trustpr-action)**  
-A read-only GitHub Action that turns pull-request changes and GitHub evidence into a receipt, showing what is confirmed and what remains unknown. Its [v0.1.0 prerelease](https://github.com/SamCT86/trustpr-action/releases/tag/v0.1.0) was tested on real public consumer PR events. It doesn't certify a PR as safe to merge or claim customer adoption.
+A read-only GitHub Action that gathers pull-request changes and checks into a receipt. It shows what could be verified and what is still unknown. The [v0.1.0 prerelease](https://github.com/SamCT86/trustpr-action/releases/tag/v0.1.0) has been tested on real public pull requests; it isn't approval to merge.
 
-## A couple of results
+**[MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study)**  
+An experiment about what happens when software reports an error after an action may already have succeeded. [Try the demo](https://samct86.github.io/machineoutcome-case-study/).
 
-I work with specialist AI agents on the engineering, then check the results.
+**[Transaction Lab](https://github.com/SamCT86/agent-cash-cow-os)**  
+A small experiment about checking payment outcomes before a system tries again. [Try the synthetic demo](https://www.sarmadtawfeek.com/agent-cash-cow).
 
-- **Yukon GPU challenge:** my run placed in roughly the **top 3% of scored submissions**. [Result and evidence](proof/yukon-qsb-benchmark.md).
-- **Paradigm's Anthropic challenge:** my result placed in roughly the **top 15% of participants**. [Result and evidence](proof/scorebench-anthropic-vliw.md).
+The demos use made-up data, not customer transactions. These are personal projects and tests, not paid client work. I use AI tools for much of the coding and focus on asking questions, reviewing results and checking what actually works.
 
-Those rankings are snapshots from October 4–5, 2026. The linked pages keep the exact scores and details.
+## Other things I've tried
 
-I've also contributed fixes to open-source projects, including [gombit](https://github.com/gombit-dev/gombit/pull/534) and [binlayout](https://github.com/LunaStev/binlayout/pull/39).
+- **Technical challenges:** [Yukon GPU benchmark](proof/yukon-qsb-benchmark.md) and [Paradigm's Anthropic challenge](proof/scorebench-anthropic-vliw.md). The linked notes contain the results and context; they aren't customer outcomes.
+- **Open source:** contributions to [gombit](https://github.com/gombit-dev/gombit/pull/534) and [binlayout](https://github.com/LunaStev/binlayout/pull/39).
 
-## How I work
+## Say hello
 
-I decide what needs to change, work with AI agents to build it, and test whether it actually helps. I stay responsible for the direction and the final decision.
+I enjoy hearing what others are working on. If you have an idea, a question or something you think we could explore together, [send me a few lines](mailto:sarmadtawfeek@gmail.com). Please leave out passwords and sensitive information.
 
-Before this, I worked in investigation and operational roles, studied IT forensics and information security, and built automated trading systems.
-
-## Work with me
-
-If a workflow is slow, expensive or unreliable, [send me a few sentences](mailto:sarmadtawfeek@gmail.com). We can start with a workflow review, one focused fix, or a reliability check.
-
-No long brief needed. Please leave out credentials and sensitive data. We agree on scope and price before any work is ordered.
-
-[Portfolio](https://www.sarmadtawfeek.com) · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Email](mailto:sarmadtawfeek@gmail.com)
+[Website](https://www.sarmadtawfeek.com) · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Email](mailto:sarmadtawfeek@gmail.com)
