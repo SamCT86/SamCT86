@@ -7,7 +7,7 @@ Earlier customer-facing and technical jobs taught me to listen, pay attention to
 ## A few projects
 
 **[TrustPR](https://github.com/SamCT86/trustpr-action)**  
-A read-only GitHub Action that gathers pull-request changes and checks into a receipt. It shows what could be verified and what is still unknown. The [v0.1.0 prerelease](https://github.com/SamCT86/trustpr-action/releases/tag/v0.1.0) has been tested on real public pull requests; it isn't approval to merge.
+A read-only GitHub Action that gathers pull-request changes and checks into a receipt. It shows what could be verified and what is still unknown. The [v0.1.1 prerelease](https://github.com/SamCT86/trustpr-action/releases/tag/v0.1.1) has been tested on a maintainer-controlled public pull request; this is first-party QA, not independent adoption or approval to merge.
 
 **[MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study)**  
 An experiment about what happens when software reports an error after an action may already have succeeded. [Try the demo](https://samct86.github.io/machineoutcome-case-study/).
@@ -20,7 +20,7 @@ The demos use made-up data, not customer transactions. These are personal projec
 ## Other things I've tried
 
 - **Technical challenges:** [Yukon GPU benchmark](proof/yukon-qsb-benchmark.md) and [Paradigm's Anthropic challenge](proof/scorebench-anthropic-vliw.md). The linked notes contain the results and context; they aren't customer outcomes.
-- **Open source:** contributions to [gombit](https://github.com/gombit-dev/gombit/pull/534) and [binlayout](https://github.com/LunaStev/binlayout/pull/39).
+- **Open source:** merged contributions to [gombit](https://github.com/gombit-dev/gombit/pull/534), [binlayout](https://github.com/LunaStev/binlayout/pull/39), and [openmuse](https://github.com/tahodev/openmuse/pull/46).
 
 ## Say hello
 
