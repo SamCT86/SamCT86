@@ -1,29 +1,50 @@
-# Hi, I'm Sam
+# Sarmad Tawfeek
 
-I'm based in Stockholm. I enjoy learning new things and working with other people. I like having something to work towards together, even if we start with just a question.
+**Independent builder · open-source developer tools · reliable automation**  
+Stockholm, Sweden
 
-Earlier customer-facing and technical jobs taught me to listen, pay attention to details and take responsibility. These days I spend time exploring ideas through personal digital projects.
+I build small, useful tools and testable systems for situations where software needs to prove **what actually happened**, rather than guess from a green check or a timeout.
 
-## A few projects
+I work with AI-assisted development, define acceptance criteria, inspect failure cases and review the evidence before making claims. My focus: software people can **try, inspect and improve**.
 
-**[TrustPR](https://github.com/SamCT86/trustpr-action)**  
-A read-only GitHub Action that gathers pull-request changes and checks into a receipt. It shows what could be verified and what is still unknown. The [v0.1.0 prerelease](https://github.com/SamCT86/trustpr-action/releases/tag/v0.1.0) has been tested on real public pull requests; it isn't approval to merge.
+## Open-source project
 
-**[MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study)**  
-An experiment about what happens when software reports an error after an action may already have succeeded. [Try the demo](https://samct86.github.io/machineoutcome-case-study/).
+### [TrustPR](https://github.com/SamCT86/trustpr-action) — understand your pull request evidence
 
-**[Transaction Lab](https://github.com/SamCT86/agent-cash-cow-os)**  
-A small experiment about checking payment outcomes before a system tries again. [Try the synthetic demo](https://www.sarmadtawfeek.com/agent-cash-cow).
+A free, **MIT-licensed** GitHub Action that produces a readable receipt of observed pull-request changes and GitHub checks, including what remains unknown.
 
-The demos use made-up data, not customer transactions. These are personal projects and tests, not paid client work. I use AI tools for much of the coding and focus on asking questions, reviewing results and checking what actually works.
+**[Install in five steps](https://github.com/SamCT86/trustpr-action/blob/main/START-HERE.md)** · **[Find it on GitHub Marketplace](https://github.com/marketplace/actions/trustpr-evidence-receipt)** · [See a real first-party run](https://github.com/SamCT86/trustpr-consumer-canary/actions/runs/39475939069)
 
-## Other things I've tried
+Current release: **v0.1.1 prerelease**. No separate account or TrustPR subscription. The receipt does **not** execute PR tests, certify that code is safe, or authorize merging. An incomplete `PARTIAL` result stays incomplete.
 
-- **Technical challenges:** [Yukon GPU benchmark](proof/yukon-qsb-benchmark.md) and [Paradigm's Anthropic challenge](proof/scorebench-anthropic-vliw.md). The linked notes contain the results and context; they aren't customer outcomes.
-- **Open source:** contributions to [gombit](https://github.com/gombit-dev/gombit/pull/534) and [binlayout](https://github.com/LunaStev/binlayout/pull/39).
+## Engineering projects you can try
 
-## Say hello
+### [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) — check before you retry
 
-I enjoy hearing what others are working on. If you have an idea, a question or something you think we could explore together, [send me a few lines](mailto:sarmadtawfeek@gmail.com). Please leave out passwords and sensitive information.
+What if a request times out **after an action already happened**? MachineOutcome's public reference shows how to reconcile the observed outcome before repeating an external action.
 
-[Website](https://www.sarmadtawfeek.com) · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Email](mailto:sarmadtawfeek@gmail.com)
+**[Try the browser demo](https://samct86.github.io/machineoutcome-case-study/)** · [Read the reference implementation](https://github.com/SamCT86/machineoutcome-case-study)
+
+Synthetic data only. This is a **public technical reference, not a product for sale**. The full runtime is separate and not published. Open-source licensing for the public reference is **under review**, not yet granted.
+
+### [Transaction Lab](https://github.com/SamCT86/agent-cash-cow-os) — avoid duplicate payment actions
+
+An inspectable synthetic lab about payment timeouts, provider readback, and safe retry decisions. **[Try the lab](https://www.sarmadtawfeek.com/agent-cash-cow)**.
+
+This is an evaluation-only public demonstration, **not** an open-source or production payment system.
+
+## Contributions accepted upstream
+
+**10 merged open-source pull requests across three independently maintained projects:** [gombit](https://github.com/gombit-dev/gombit/pull/563), [binlayout](https://github.com/LunaStev/binlayout/pull/39) and [openmuse](https://github.com/tahodev/openmuse/pull/46). These are reviewed contributions, not customer testimonials or independent installations of my tools.
+
+## Working direction
+
+Useful software first. Independent installation, real feedback, repeat use and accepted contributions matter more than a polished sales page.
+
+TrustPR stays free and open source. **If sustained use creates real needs**, optional hosted operations, integrations or support might one day make sense as a *separate* offering. Nothing paid is being advertised here today.
+
+## Explore & get in touch
+
+[My website](https://www.sarmadtawfeek.com) · [TrustPR feedback](https://github.com/SamCT86/trustpr-action/issues/11) · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/)
+
+*Demos are synthetic; no real customer results, independent TrustPR adoption or commercial revenue are implied.*
