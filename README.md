@@ -25,7 +25,7 @@ What if a request times out **after an action already happened**? MachineOutcome
 
 **[Try the browser demo](https://samct86.github.io/machineoutcome-case-study/)** · [Read the reference implementation](https://github.com/SamCT86/machineoutcome-case-study)
 
-Synthetic data only. This is a **public technical reference, not a product for sale**. The full runtime is separate and not published. Open-source licensing for the public reference is **under review**, not yet granted.
+Synthetic data only. This **public technical reference is MIT-licensed**, not a product for sale. The full private runtime is separate and not published. [See its MIT license](https://github.com/SamCT86/machineoutcome-case-study/blob/main/LICENSE).
 
 ### [Transaction Lab](https://github.com/SamCT86/agent-cash-cow-os) — avoid duplicate payment actions
 
