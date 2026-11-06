@@ -35,7 +35,7 @@ This is an evaluation-only public demonstration, **not** an open-source or produ
 
 ## Contributions accepted upstream
 
-**10 merged open-source pull requests across three independently maintained projects:** [gombit](https://github.com/gombit-dev/gombit/pull/563), [binlayout](https://github.com/LunaStev/binlayout/pull/39) and [openmuse](https://github.com/tahodev/openmuse/pull/46). These are reviewed contributions, not customer testimonials or independent installations of my tools.
+**11 merged open-source pull requests across three independently maintained projects.** Selected examples: [SQLite migration correctness in gombit](https://github.com/gombit-dev/gombit/pull/651), [offline release-workflow tests in binlayout](https://github.com/LunaStev/binlayout/pull/35) and [credential-free documentation checks in openmuse](https://github.com/tahodev/openmuse/pull/46). These are accepted upstream changes, not customer testimonials, proof of seniority or independent TrustPR adoption.
 
 ## Working direction
 
@@ -44,6 +44,8 @@ Useful software first. Independent installation, real feedback, repeat use and a
 TrustPR stays free and open source. **If sustained use creates real needs**, optional hosted operations, integrations or support might one day make sense as a *separate* offering. Nothing paid is being advertised here today.
 
 ## Explore & get in touch
+
+**Open to relevant engineering roles and focused consulting conversations** about trustworthy AI-assisted development, CI evidence and software reliability. For an introduction or technical discussion, please reach out via [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/).
 
 [My website](https://www.sarmadtawfeek.com) · [TrustPR feedback](https://github.com/SamCT86/trustpr-action/issues/11) · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/)
 
