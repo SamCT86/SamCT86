@@ -1,16 +1,16 @@
 # Sarmad Tawfeek
 
-**Self-taught software builder · AI-assisted engineering · open-source reliability**
+**AI-native product builder · AI-agent orchestration · evidence-first delivery**
 
 Stockholm, Sweden
 
-I build and review software that must **prove what happened before taking the next action**: agent workflows, safe retries, GitHub Actions, and evidence-first delivery. I use AI-assisted development, but take human responsibility for problem definition, acceptance criteria, tests, code review, and what I publish.
+I lead AI agents to turn product ideas and reliability problems into inspectable technical results. I define the goal, scope and acceptance criteria, evaluate demos, test outcomes and original-source evidence, and decide what is ready to publish. **AI agents perform the hands-on coding**; I do not claim to independently write or review implementation code as a conventional software engineer. I take responsibility for the direction, decisions and claims.
 
-**Open to:** engineering roles, paid technical trials, focused consulting, and open-source collaboration in AI agent engineering, developer tools, reliability, and CI evidence. [Connect on LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) or [visit my website](https://www.sarmadtawfeek.com).
+**Open to:** AI-native product-building work, agent orchestration, technical product ownership, outcome-driven collaborations, and paid trials where AI-assisted coding is explicitly acceptable. [Connect on LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) or [visit my website](https://www.sarmadtawfeek.com).
 
-## Evidence of engineering work — independently merged upstream
+## Evidence of AI-assisted technical delivery — independently merged upstream
 
-**11 merged pull requests in 3 independently maintained open-source projects** (verified 11 November 2026). These are accepted code contributions, **not** customer results, formal certifications, or endorsements of my own products.
+**11 merged pull requests in 3 independently maintained open-source projects** (verified 11 November 2026). These are real upstream-accepted results from AI-assisted work under my GitHub account; they do **not** prove that I personally wrote the implementation code, passed a coding interview, delivered paid client work or hold an engineering certification.
 
 | Problem | What changed | Independent evidence |
 |---|---|---|
@@ -38,7 +38,7 @@ An inspectable **synthetic evaluation** of payment timeouts, provider readback, 
 
 ## Work with me
 
-If you have an AI workflow that occasionally retries the wrong thing, an automation that reports success without proof, or CI checks with unclear trust boundaries, I can discuss a **scoped engineering review or focused fix**, subject to technical fit and agreed terms. I am also interested in real coding challenges, OSS maintenance and agent/developer-tool engineering roles.
+If you need someone to define an AI-native product, direct agent-assisted implementation, or make automation results auditable, I can discuss a **bounded discovery, prototype or delivery engagement** with clear acceptance criteria. Code-level assurance and security decisions require appropriately qualified human review when the risk calls for it. I am also interested in paid AI-agent/product challenges that permit AI-assisted implementation.
 
 **[LinkedIn — contact](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/)** · **[Website](https://www.sarmadtawfeek.com)** · [TrustPR feedback](https://github.com/SamCT86/trustpr-action/issues/11)
 
