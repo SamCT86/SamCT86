@@ -1,45 +1,41 @@
 # Sarmad Tawfeek
 
-**AI-native product builder · AI-agent orchestration · evidence-first delivery**
+**AI-native product builder · Agent orchestration · Reliability and evidence-first delivery**
 
 Stockholm, Sweden
 
-I lead AI agents to turn product ideas and reliability problems into inspectable technical results. I define the goal, scope and acceptance criteria, evaluate demos, test outcomes and original-source evidence, and decide what is ready to publish. **AI agents perform the hands-on coding**; I do not claim to independently write or review implementation code as a conventional software engineer. I take responsibility for the direction, decisions and claims.
+**I turn AI-assisted software work into technical outcomes that other engineers can inspect, test and challenge.** I define the problem and acceptance criteria, orchestrate AI agents that write implementation code, evaluate evidence and failure modes, and take responsibility for technical-product decisions and the claims I publish.
 
-**Open to:** AI-native product-building work, agent orchestration, technical product ownership, outcome-driven collaborations, and paid trials where AI-assisted coding is explicitly acceptable. [Connect on LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) or [visit my website](https://www.sarmadtawfeek.com).
+**I can help with a scoped agent-reliability review, CI evidence audit or review-ready fix sprint.** If your team has a workflow that might act twice, a merge check whose trust boundary is unclear, or an AI-assisted implementation that's hard to evaluate, [email me a short description](mailto:sarmadtawfeek@gmail.com?subject=AI%20agent%20reliability%20or%20CI%20evidence%20discussion), [connect on LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) or [visit my website](https://www.sarmadtawfeek.com). No credentials or confidential files in the initial message.
 
-## Evidence of AI-assisted technical delivery — independently merged upstream
+## Three independently reviewed engineering outcomes
 
-**11 merged pull requests in 3 independently maintained open-source projects** (verified 11 November 2026). These are real upstream-accepted results from AI-assisted work under my GitHub account; they do **not** prove that I personally wrote the implementation code, passed a coding interview, delivered paid client work or hold an engineering certification.
+I have **11 merged upstream pull requests across three independently maintained open-source projects** (verified against GitHub on 13 November 2026). These selected examples show specific problems, changes and maintainer decisions—not a claim that I personally typed the code.
 
-| Problem | What changed | Independent evidence |
-|---|---|---|
-| SQLite schema reset missed user-owned tables because `_` in `LIKE` is a wildcard | Narrowly scoped escaping fix and native SQLite regression test, including a reserved internal-table negative control | [gombit PR #651](https://github.com/gombit-dev/gombit/pull/651) · maintainer-approved and merged |
-| Invalid Go module paths could be accepted before scaffold generation | Go-native validation before writing files, with valid/invalid-path tests | [gombit PR #563](https://github.com/gombit-dev/gombit/pull/563) · two rounds of requested changes → approval → merge |
-| Crash-reclaimed jobs risked running past `MaxAttempts` | Preserve lease-expiry provenance and distinguish crash retry from voluntary release; regression coverage | [gombit PR #525](https://github.com/gombit-dev/gombit/pull/525) · merged |
+**1. A scheduler silently lost a job uniqueness guard.** A shared Go option slice could be overwritten during scheduling. A one-line capacity-bound fix and regression test preserve the caller's `Unique` option. [Gombit #521 — approved and merged](https://github.com/gombit-dev/gombit/pull/521) · [How it was tested](proof/dispatchat-slice-aliasing.md).
 
-Other accepted contributions: [gombit](https://github.com/gombit-dev/gombit/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged), [binlayout](https://github.com/LunaStev/binlayout/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged), [openmuse](https://github.com/tahodev/openmuse/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged). The PR discussions show how fixes were reviewed; some tests described in PR bodies are author-reported, not independent benchmark results.
+**2. SQLite schema reset could leave user tables behind.** `_` in SQL `LIKE` is a wildcard, so an unsafe filter treated names such as `sqlitex_cache` as reserved. A precise escape and native SQLite test check both user objects and `sqlite_sequence`. [Gombit #651 — approved and merged](https://github.com/gombit-dev/gombit/pull/651) · [How it was tested](proof/sqlite-schema-reset.md).
 
-## Tools and public engineering references
+**3. A generator accepted Go module paths that later failed to build.** Go-native module validation now runs before creating the destination; the patch passed two rounds of requested maintainer changes. [Gombit #563 — approved and merged](https://github.com/gombit-dev/gombit/pull/563) · [How it was tested](proof/go-module-validation.md).
 
-### [TrustPR](https://github.com/SamCT86/trustpr-action) — understand PR evidence without guessing
+[Browse all independently merged contributions](https://github.com/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged+-user%3ASamCT86) · [Gombit review history](https://github.com/gombit-dev/gombit/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged) · [Binlayout](https://github.com/LunaStev/binlayout/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged) · [OpenMuse](https://github.com/tahodev/openmuse/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged)
 
-Free, MIT-licensed GitHub Action producing a readable receipt of observed changes, checks, and unknowns. [Install guide](https://github.com/SamCT86/trustpr-action/blob/main/START-HERE.md) · [Marketplace](https://github.com/marketplace/actions/trustpr-evidence-receipt) · [first-party example](https://github.com/SamCT86/trustpr-consumer-canary/actions/runs/39475939069).
+## Open engineering work you can inspect
 
-**Scope:** v0.1.1 is a prerelease. TrustPR does not run PR tests, certify code safety, or authorize a merge. [Required-check workflow trust boundary remains open (#53)](https://github.com/SamCT86/trustpr-action/issues/53). No independent third-party adoption is claimed.
+**[TrustPR — evidence receipts for pull requests](https://github.com/SamCT86/trustpr-action).** A free MIT-licensed GitHub Action that reports observed diff/check evidence and what's unknown. [Install guide](https://github.com/SamCT86/trustpr-action/blob/main/START-HERE.md) · [Marketplace listing](https://github.com/marketplace/actions/trustpr-evidence-receipt). The current v0.1.1 prerelease is **not** an independent security gate: [PR-editable workflow and required-check trust remain unresolved](https://github.com/SamCT86/trustpr-action/issues/53).
 
-### [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) — reconcile before retry
+**[MachineOutcome — reconcile before retry](https://github.com/SamCT86/machineoutcome-case-study).** Public MIT-licensed synthetic demo of a difficult distributed-systems case: a timeout does not prove that an external side effect failed. [Run the browser demo](https://samct86.github.io/machineoutcome-case-study/). The private runtime is separate; no live customer outcome is claimed.
 
-A public, MIT-licensed **synthetic** case study of the ambiguous-timeout problem: a request can fail locally after the external effect already succeeded. [Try the browser demo](https://samct86.github.io/machineoutcome-case-study/). The private runtime is separate and not publicly released; the reference is not offered as a commercial product.
+**[Transaction Lab — unsafe retries and duplicate effects](https://github.com/SamCT86/agent-cash-cow-os).** An inspectable synthetic evaluation of payment-timeout scenarios, provider readback and replay decisions. [Open the lab](https://www.sarmadtawfeek.com/agent-cash-cow). It is not a production payment processor.
 
-### [Transaction Lab](https://github.com/SamCT86/agent-cash-cow-os) — duplicate-action failure modes
+## How I approach a technical problem
 
-An inspectable **synthetic evaluation** of payment timeouts, provider readback, and retry decisions. [Try the lab](https://www.sarmadtawfeek.com/agent-cash-cow). Not a production payment service or a claimed live customer deployment.
+**Reproduce the failure → choose the smallest testable change → challenge the fix with negative controls → run the relevant checks → seek independent review → state the exact outcome and remaining risk.**
+
+My contribution is **problem framing, AI-agent direction, acceptance criteria, evidence evaluation, technical-product judgment and delivery accountability**. AI agents perform hands-on implementation coding. For risk-critical code or security-sensitive changes, qualified independent code review remains important; successful tests alone are not a safety certificate.
 
 ## Work with me
 
-If you need someone to define an AI-native product, direct agent-assisted implementation, or make automation results auditable, I can discuss a **bounded discovery, prototype or delivery engagement** with clear acceptance criteria. Code-level assurance and security decisions require appropriately qualified human review when the risk calls for it. I am also interested in paid AI-agent/product challenges that permit AI-assisted implementation.
+**Potential starting points:** an Agent Reliability/CI Evidence Audit, a tightly scoped bug-fix sprint, or an AI-native product trial with measurable acceptance criteria. The right scope and commercial terms depend on your problem; I do not imply previous paid engagements or customer adoption without evidence.
 
-**[LinkedIn — contact](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/)** · **[Website](https://www.sarmadtawfeek.com)** · [TrustPR feedback](https://github.com/SamCT86/trustpr-action/issues/11)
-
-*Public examples and synthetic demos are labeled. No unverified paid clients, external installations, commercial revenue, or engineering certifications are implied.*
+**[Compare three bounded engagement options](WORK_WITH_ME.md)** · **[Email a concrete problem](mailto:sarmadtawfeek@gmail.com?subject=Scope%20a%20technical%20engagement)** · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Website](https://www.sarmadtawfeek.com)
