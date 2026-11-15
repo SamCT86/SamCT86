@@ -18,7 +18,30 @@ I have **11 merged upstream pull requests across three independently maintained 
 
 **3. A generator accepted Go module paths that later failed to build.** Go-native module validation now runs before creating the destination; the patch passed two rounds of requested maintainer changes. [Gombit #563 — approved and merged](https://github.com/gombit-dev/gombit/pull/563) · [How it was tested](proof/go-module-validation.md).
 
-[Browse all independently merged contributions](https://github.com/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged+-user%3ASamCT86) · [Gombit review history](https://github.com/gombit-dev/gombit/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged) · [Binlayout](https://github.com/LunaStev/binlayout/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged) · [OpenMuse](https://github.com/tahodev/openmuse/pulls?q=is%3Apr+author%3ASamCT86+is%3Amerged)
+<details>
+<summary>All 11 merged upstream pull requests</summary>
+
+**Gombit**
+
+- [#521 — fix: preserve caller options in DispatchAt](https://github.com/gombit-dev/gombit/pull/521)
+- [#525 — fix: stop crash redelivery after MaxAttempts](https://github.com/gombit-dev/gombit/pull/525)
+- [#534 — fix: retry each failed job once per invocation](https://github.com/gombit-dev/gombit/pull/534)
+- [#535 — fix: treat dev null stdin as non-interactive](https://github.com/gombit-dev/gombit/pull/535)
+- [#541 — test: make staticcheck nil guards explicit](https://github.com/gombit-dev/gombit/pull/541)
+- [#563 — fix(scaffold): validate Go module paths before generation](https://github.com/gombit-dev/gombit/pull/563)
+- [#651 — fix(migrations): preserve only reserved sqlite_ objects during reset for SQLite](https://github.com/gombit-dev/gombit/pull/651)
+
+**Binlayout**
+
+- [#35 — test(ci): add offline release workflow regression coverage](https://github.com/LunaStev/binlayout/pull/35)
+- [#39 — ci: connect publishing result to manual release flow](https://github.com/LunaStev/binlayout/pull/39)
+
+**OpenMuse**
+
+- [#40 — Add runnable typed tool example](https://github.com/tahodev/openmuse/pull/40)
+- [#46 — Add credential-free documentation link checker](https://github.com/tahodev/openmuse/pull/46)
+
+</details>
 
 ## Open engineering work you can inspect
 

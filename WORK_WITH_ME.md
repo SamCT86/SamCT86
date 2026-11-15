@@ -19,6 +19,8 @@ My role is to define the problem, direct AI-agent implementation, establish acce
 
 **Acceptance:** the client can reproduce each confirmed finding, trace it to source and understand the remaining unknowns. This is not a security certification or penetration-test guarantee.
 
+**Example:** On Binlayout, the original release run could succeed before crate publishing finished. A maintainer-approved change puts the requested tag and publishing jobs in the same run. [See the original runs, regression tests and release boundary](proof/binlayout-release-evidence.md).
+
 ## Option B — One-defect fix sprint
 
 **Best for:** a narrow, high-impact reliability or security-adjacent bug with accessible code and clear ownership.
