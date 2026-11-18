@@ -20,4 +20,12 @@ The PR author is `SamCT86`. Sarmad directed the AI-assisted engineering work and
 
 ## What I would check in your workflow
 
-Pick one handoff where green can mean “request accepted.” Trace the exact run, artifact or request ID to the final effect. Then exercise the downstream failure case in a permitted test environment and check that the report exposes it without counting a retry twice. For a release pipeline, start with the run URL and one version tag. [See the scope of a one-workflow review](../WORK_WITH_ME.md#option-a--reliability--ci-evidence-audit).
+For a release review, send the initiating run URL and one version tag. On Binlayout, the [registry check and publish steps](https://github.com/LunaStev/binlayout/blob/b2a825b6ee9f2e9f6a93f346ab442b4b7047065f/.github/workflows/release.yml#L62-L69) give three materially different answers.
+
+| What the run shows | What I would report |
+|---|---|
+| `Publish to crates.io` ran and succeeded | GitHub recorded a successful publish step. Read back that exact crate version from the registry. |
+| `Publish to crates.io` was skipped after the registry check found the version | The version already existed. A green run here is a successful no-op. |
+| Publishing failed, was cancelled, or was skipped without confirmed registry existence | The run leaves publication unconfirmed. Check the registry independently before deciding whether to retry. |
+
+For source provenance, compare the downloaded archive's SHA-256 with the registry index and the commit reported in `.cargo_vcs_info.json` with the GitHub tag target. For `v0.1.0`, the checksum was `f350bdd1984438a38e9559075e1573fbb4278670d04348e7dc7b5081553de08d` and both commit references resolved to `6cf1500c6f570ca42e7540e5c497fb6c4872efff`. [See the scope of a one-workflow review](../WORK_WITH_ME.md#option-a--reliability--ci-evidence-audit).
