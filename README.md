@@ -12,7 +12,7 @@ Stockholm, Sweden
 
 I have **11 merged upstream pull requests across three independently maintained open-source projects** (verified against GitHub on 17 November 2026). These selected examples show specific problems, changes and maintainer decisions—not a claim that I personally typed the code.
 
-**1. A green release run could finish before package publishing did.** The upstream fix brings the requested tag and its publishing jobs into one GitHub Actions run. [Binlayout #39 — approved and merged](https://github.com/LunaStev/binlayout/pull/39) · [Release run and package evidence](proof/binlayout-release-evidence.md).
+**1. A green release run could finish before package publishing did.** The upstream fix puts the requested tag and its publishing jobs in one GitHub Actions run. The [historical publish job](https://github.com/LunaStev/binlayout/actions/runs/36327486327/job/108643013538) and [registry v0.1.0](https://crates.io/crates/binlayout/0.1.0) predate the fix. [Binlayout #39 — approved and merged](https://github.com/LunaStev/binlayout/pull/39#pullrequestreview-5346324297) · [Release evidence](proof/binlayout-release-evidence.md).
 
 **2. A scheduler silently lost a job uniqueness guard.** A shared Go option slice could be overwritten during scheduling. A one-line capacity-bound fix and regression test preserve the caller's `Unique` option. [Gombit #521 — approved and merged](https://github.com/gombit-dev/gombit/pull/521) · [How it was tested](proof/dispatchat-slice-aliasing.md).
 
