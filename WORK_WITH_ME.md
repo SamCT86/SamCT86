@@ -6,20 +6,15 @@ My role is to define the problem, direct AI-agent implementation, establish acce
 
 ## Option A — Reliability / CI evidence audit
 
-**Best for:** a team unsure whether CI/release checks or an agent workflow actually enforce its stated safeguards.
+If a green run can mean only that a job started, I'll trace one workflow from the triggering commit to the result your team needs to verify, such as a package reaching its registry. The review starts with existing logs and source.
 
-**Bounded scope:** one repository or one clearly identified workflow, agreed upfront. Read-only source/evidence review by default; any live exploit reproduction or privileged configuration change requires separate authorized scope.
+- **Send one example.** Share a public workflow or run URL and the result you expected it to prove. For a private workflow, start with a brief description and share access through your own approved route after we agree scope.
+- **Get a decision you can act on.** You'll receive the exact commit, check and output examined, the most consequential gap and a prioritized fix. I include a repeatable check where the evidence permits it and identify any missing access or data separately.
+- **Accept the review when your engineer can follow the evidence.** They can locate the source and runs behind each finding, repeat the check for a confirmed gap, and see the next change to make.
 
-**Proposed deliverable:**
+On Binlayout, the original release could appear green before publishing finished. A maintainer-approved change put the requested tag and publishing jobs in the same run. [See the original runs and the before-and-after regression tests](proof/binlayout-release-evidence.md).
 
-- A map of the claimed trust boundary and the exact source/checks that implement it.
-- Two or three high-impact falsifiers grounded in real failure modes, such as PR-editable workflow trust, skipped/neutral jobs, lost acknowledgements and duplicate effects.
-- A prioritized findings register: confirmed defect vs plausible risk vs unknown, with reproducible steps when safe.
-- An owner-facing decision: repair now, accept documented risk, or stop under-evidenced claims.
-
-**Acceptance:** the client can reproduce each confirmed finding, trace it to source and understand the remaining unknowns. This is not a security certification or penetration-test guarantee.
-
-**Example:** On Binlayout, the original release run could succeed before crate publishing finished. A maintainer-approved change puts the requested tag and publishing jobs in the same run. [See the original runs, regression tests and release boundary](proof/binlayout-release-evidence.md).
+[**Send one workflow and the result you need to verify**](mailto:sarmadtawfeek@gmail.com?subject=One-workflow%20CI%20evidence%20review&body=Public%20workflow%20or%20run%20URL%20%28or%20short%20description%29%3A%0AExpected%20result%3A%0A%0APlease%20leave%20out%20credentials%20and%20confidential%20material.)
 
 ## Option B — One-defect fix sprint
 

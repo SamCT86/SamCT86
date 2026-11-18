@@ -6,17 +6,17 @@ Stockholm, Sweden
 
 **I turn AI-assisted software work into technical outcomes that other engineers can inspect, test and challenge.** I define the problem and acceptance criteria, orchestrate AI agents that write implementation code, evaluate evidence and failure modes, and take responsibility for technical-product decisions and the claims I publish.
 
-**I can help with a scoped agent-reliability review, CI evidence audit or review-ready fix sprint.** If your team has a workflow that might act twice, a merge check whose trust boundary is unclear, or an AI-assisted implementation that's hard to evaluate, [email me a short description](mailto:sarmadtawfeek@gmail.com?subject=AI%20agent%20reliability%20or%20CI%20evidence%20discussion), [connect on LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) or [visit my website](https://www.sarmadtawfeek.com). No credentials or confidential files in the initial message.
+**Does a green CI run prove your release actually shipped?** I review one workflow, trace what happened, and show the first gap worth fixing. [See the reviewed release case](proof/binlayout-release-evidence.md) or [scope a one-workflow review](WORK_WITH_ME.md#option-a--reliability--ci-evidence-audit).
 
 ## Three independently reviewed engineering outcomes
 
-I have **11 merged upstream pull requests across three independently maintained open-source projects** (verified against GitHub on 13 November 2026). These selected examples show specific problems, changes and maintainer decisions—not a claim that I personally typed the code.
+I have **11 merged upstream pull requests across three independently maintained open-source projects** (verified against GitHub on 17 November 2026). These selected examples show specific problems, changes and maintainer decisions—not a claim that I personally typed the code.
 
 **1. A scheduler silently lost a job uniqueness guard.** A shared Go option slice could be overwritten during scheduling. A one-line capacity-bound fix and regression test preserve the caller's `Unique` option. [Gombit #521 — approved and merged](https://github.com/gombit-dev/gombit/pull/521) · [How it was tested](proof/dispatchat-slice-aliasing.md).
 
 **2. SQLite schema reset could leave user tables behind.** `_` in SQL `LIKE` is a wildcard, so an unsafe filter treated names such as `sqlitex_cache` as reserved. A precise escape and native SQLite test check both user objects and `sqlite_sequence`. [Gombit #651 — approved and merged](https://github.com/gombit-dev/gombit/pull/651) · [How it was tested](proof/sqlite-schema-reset.md).
 
-**3. A generator accepted Go module paths that later failed to build.** Go-native module validation now runs before creating the destination; the patch passed two rounds of requested maintainer changes. [Gombit #563 — approved and merged](https://github.com/gombit-dev/gombit/pull/563) · [How it was tested](proof/go-module-validation.md).
+**3. A green release run could finish before package publishing did.** The upstream fix brings the requested tag and its publishing jobs into one GitHub Actions run. [Binlayout #39 — approved and merged](https://github.com/LunaStev/binlayout/pull/39) · [Release run and package evidence](proof/binlayout-release-evidence.md).
 
 <details>
 <summary>All 11 merged upstream pull requests</summary>
@@ -28,7 +28,7 @@ I have **11 merged upstream pull requests across three independently maintained 
 - [#534 — fix: retry each failed job once per invocation](https://github.com/gombit-dev/gombit/pull/534)
 - [#535 — fix: treat dev null stdin as non-interactive](https://github.com/gombit-dev/gombit/pull/535)
 - [#541 — test: make staticcheck nil guards explicit](https://github.com/gombit-dev/gombit/pull/541)
-- [#563 — fix(scaffold): validate Go module paths before generation](https://github.com/gombit-dev/gombit/pull/563)
+- [#563 — fix(scaffold): validate Go module paths before generation](https://github.com/gombit-dev/gombit/pull/563) · [How it was tested](proof/go-module-validation.md)
 - [#651 — fix(migrations): preserve only reserved sqlite_ objects during reset for SQLite](https://github.com/gombit-dev/gombit/pull/651)
 
 **Binlayout**
