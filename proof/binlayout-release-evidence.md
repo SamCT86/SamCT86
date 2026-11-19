@@ -4,7 +4,7 @@ An operator starts a GitHub release and sees a green run. Can they tell whether 
 
 ## What changed
 
-The manual workflow already verified the release before creating or reusing the GitHub release. The patch exposes the resolved tag as an output, then calls the existing publishing workflow as a dependent job. That workflow checks out the selected tag, resolves the commit, verifies it and checks the registry before publishing. The initiating run now contains the publishing jobs for that tag. The tag-push and standalone manual entry points remain in place, and an already-published crate version still skips the publishing step. [Reviewed PR #39](https://github.com/LunaStev/binlayout/pull/39) · [Initiating workflow at the merge](https://github.com/LunaStev/binlayout/blob/b2a825b6ee9f2e9f6a93f346ab442b4b7047065f/.github/workflows/github-release.yml) · [Publishing workflow at the merge](https://github.com/LunaStev/binlayout/blob/b2a825b6ee9f2e9f6a93f346ab442b4b7047065f/.github/workflows/release.yml)
+The manual workflow already verified the release before creating or reusing the GitHub release. The patch exposes the resolved tag as an output, then calls the existing publishing workflow as a dependent job. That workflow checks out the selected tag, resolves the commit, verifies it and checks the registry before publishing. The initiating run now contains the publishing jobs for that tag. The workflow keeps the tag-push and standalone manual entry points. Its registry check skips the publish step when it finds the version. [Reviewed PR #39](https://github.com/LunaStev/binlayout/pull/39) · [Initiating workflow at the merge](https://github.com/LunaStev/binlayout/blob/b2a825b6ee9f2e9f6a93f346ab442b4b7047065f/.github/workflows/github-release.yml) · [Publishing workflow at the merge](https://github.com/LunaStev/binlayout/blob/b2a825b6ee9f2e9f6a93f346ab442b4b7047065f/.github/workflows/release.yml)
 
 ## What the evidence supports
 
@@ -15,6 +15,10 @@ The manual workflow already verified the release before creating or reusing the 
 | Did independent review and hosted CI pass? | Repository maintainer [LunaStev approved #39](https://github.com/LunaStev/binlayout/pull/39#pullrequestreview-5346324297), then it merged as `b2a825b6ee9f2e9f6a93f346ab442b4b7047065f`. All four jobs passed in the [PR-head fork run](https://github.com/SamCT86/binlayout/actions/runs/36461761154) and the [upstream merge run](https://github.com/LunaStev/binlayout/actions/runs/36504021539). |
 | What package reached the registry? | [crates.io records v0.1.0](https://crates.io/crates/binlayout/0.1.0) at 14:53:01 UTC on 27 September 2026. The downloaded crate matched the [registry index checksum](https://index.crates.io/bi/nl/binlayout). Its embedded Git SHA matches the [release tag](https://github.com/LunaStev/binlayout/releases/tag/v0.1.0) at `6cf1500`, eight commits before #39 merged. |
 | Did the new path publish a release? | The v0.1.0 publication predates the merge. The upstream merge run contains four verification jobs. Hosted failure, cancellation and first-time publication under the merged flow remain unverified. |
+
+### A retry can fail before the registry check
+
+At the merge, the resolve job checks out the requested tag and then runs `.github/scripts/resolve_release.py` from that checkout. The historical [v0.1.0 tree](https://github.com/LunaStev/binlayout/tree/6cf1500c6f570ca42e7540e5c497fb6c4872efff/.github) predates the helper. Running the first helper command against the tag's files failed locally because the file was missing. A hosted retry remains unverified. [Resolve job at the merge](https://github.com/LunaStev/binlayout/blob/b2a825b6ee9f2e9f6a93f346ab442b4b7047065f/.github/workflows/release.yml#L35-L44)
 
 The PR author is `SamCT86`. Sarmad directed the AI-assisted engineering work and is accountable for the findings and evidence presented here. LunaStev independently reviewed the change.
 
