@@ -4,7 +4,7 @@
 
 Stockholm, Sweden
 
-**Does a green CI run prove your release actually shipped?** I review one workflow, trace what happened, and show the first gap worth fixing. [See the reviewed release case](proof/binlayout-release-evidence.md). [Email one workflow and the result you need to verify](mailto:sarmadtawfeek@gmail.com?subject=One-workflow%20CI%20evidence%20review&body=Public%20workflow%20or%20run%20URL%20%28or%20short%20description%29%3A%0AExpected%20result%3A%0A%0APlease%20leave%20out%20credentials%20and%20confidential%20material.) or [see the review scope](WORK_WITH_ME.md#option-a--reliability--ci-evidence-audit).
+**Does a green CI run prove your release actually shipped?** I review one workflow, trace what happened, and show the first gap worth fixing. [See the reviewed release case](proof/binlayout-release-evidence.md). [Email one workflow and the result you need to verify](mailto:sarmadtawfeek@gmail.com?subject=One-workflow%20CI%20evidence%20review&body=Public%20workflow%20or%20run%20URL%20%28or%20short%20description%29%3A%0AExpected%20result%3A%0A%0APlease%20leave%20out%20credentials%20and%20confidential%20material.) or [see a sample audit](WORK_WITH_ME.md#ci-audit-sample).
 
 **I turn AI-assisted software work into technical outcomes that other engineers can inspect, test and challenge.** I define the problem and acceptance criteria, orchestrate AI agents that write implementation code, evaluate evidence and failure modes, and take responsibility for technical-product decisions and the claims I publish.
 

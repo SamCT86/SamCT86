@@ -12,9 +12,18 @@ If a green run can mean only that a job started, I'll trace one workflow from th
 - **Get a decision you can act on.** You'll receive the exact commit, check and output examined, the most consequential gap and a prioritized fix. I include a repeatable check where the evidence permits it and identify any missing access or data separately.
 - **Accept the review when your engineer can follow the evidence.** They can locate the source and runs behind each finding, repeat the check for a confirmed gap, and see the next change to make.
 
-On Binlayout, the original release could appear green before publishing finished. A maintainer-approved change put the requested tag and publishing jobs in the same run. [See the original runs and the before-and-after regression tests](proof/binlayout-release-evidence.md).
-
 [**Send one workflow and the result you need to verify**](mailto:sarmadtawfeek@gmail.com?subject=One-workflow%20CI%20evidence%20review&body=Public%20workflow%20or%20run%20URL%20%28or%20short%20description%29%3A%0AExpected%20result%3A%0A%0APlease%20leave%20out%20credentials%20and%20confidential%20material.)
+
+### CI audit sample
+
+**Question:** Did Binlayout v0.1.0 reach crates.io, and what does the newer release workflow prove?
+
+| Verdict | Evidence | Decision |
+| --- | --- | --- |
+| Historical publication confirmed | The [release job](https://github.com/LunaStev/binlayout/actions/runs/36326644015/job/108640668072) created the tag and release. A separate [publish job](https://github.com/LunaStev/binlayout/actions/runs/36327486327/job/108643013538) succeeded, and the [registry](https://crates.io/crates/binlayout/0.1.0) lists the exact version. | Verify publication with the job and the received version. |
+| New workflow verified through review and CI | The maintainer approved [PR #39](https://github.com/LunaStev/binlayout/pull/39). The new path connects the release and publishing jobs. [Merge CI](https://github.com/LunaStev/binlayout/actions/runs/36504021539) ran the release-workflow tests. | Use the next new version to verify the publishing step and registry readback together. |
+
+[See the exact commit, checksums and negative controls](proof/binlayout-release-evidence.md).
 
 ## Option B — One-defect fix sprint
 
