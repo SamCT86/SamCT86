@@ -34,43 +34,19 @@ For a release review, send the initiating run URL and one version tag. On Binlay
 
 For source provenance, compare the downloaded archive's SHA-256 with the registry index and the commit reported in `.cargo_vcs_info.json` with the GitHub tag target. For `v0.1.0`, the checksum was `f350bdd1984438a38e9559075e1573fbb4278670d04348e7dc7b5081553de08d` and both commit references resolved to `6cf1500c6f570ca42e7540e5c497fb6c4872efff`. [See the scope of a one-workflow review](../WORK_WITH_ME.md#option-a--reliability--ci-evidence-audit).
 
-<details>
-<summary>Reproduce the registry and tag check</summary>
+## Run the audit yourself
 
-Save this as `check_release.py` and run `python check_release.py` with Python 3. It fetches the public index, archive and tag. It reads the metadata inside the archive without installing or executing the crate.
+Open [the verifier](verify_binlayout_release.py), download the raw file, and run it with Python 3.11 or later.
 
-```python
-import hashlib
-import io
-import json
-import tarfile
-from urllib.request import Request, urlopen
-
-name, version = "binlayout", "0.1.0"
-
-def read(url):
-    request = Request(url, headers={"User-Agent": "binlayout-release-proof"})
-    with urlopen(request, timeout=20) as response:
-        return response.read()
-
-index = read("https://index.crates.io/bi/nl/binlayout")
-entry = next(row for row in map(json.loads, index.splitlines()) if row["vers"] == version)
-crate = read(f"https://static.crates.io/crates/{name}/{name}-{version}.crate")
-digest = hashlib.sha256(crate).hexdigest()
-if digest != entry["cksum"]:
-    raise SystemExit("FAIL: crate bytes differ from the registry index")
-
-with tarfile.open(fileobj=io.BytesIO(crate), mode="r:gz") as archive:
-    with archive.extractfile(f"{name}-{version}/.cargo_vcs_info.json") as metadata:
-        packaged_commit = json.load(metadata)["git"]["sha1"]
-
-tag = json.loads(read(f"https://api.github.com/repos/LunaStev/binlayout/git/ref/tags/v{version}"))["object"]
-if tag["type"] != "commit" or tag["sha"] != packaged_commit:
-    raise SystemExit("FAIL: packaged commit differs from the GitHub release tag")
-
-print(f"PASS {name} {version}\narchive SHA-256: {digest}\nsource commit: {packaged_commit}")
+```sh
+python3 verify_binlayout_release.py
 ```
 
-Expected archive SHA-256 `f350bdd1984438a38e9559075e1573fbb4278670d04348e7dc7b5081553de08d` and source commit `6cf1500c6f570ca42e7540e5c497fb6c4872efff`.
+The verifier reads eight public GitHub and crates.io sources, pins both run attempts to their workflow revisions, and compares the crate checksum and embedded commit with the registry records and release tag. It uses the Python standard library, needs no credentials, and reads the crate metadata without installing it.
 
-</details>
+| Check | Expected evidence |
+|---|---|
+| Historical publish attempt `36327486327/1` | `SUCCESS_RECORDED`. The registry's creation timestamp falls within the recorded publish step. The original [publish job](https://github.com/LunaStev/binlayout/actions/runs/36327486327/job/108643013538) also logs the publication. |
+| Merge CI attempt `36504021539/1` | `NO_PUBLISH_STEP_IN_OBSERVED_ATTEMPT`. Four verification jobs ran. A hosted publication from the changed release workflow still needs its own receipt. |
+
+The result covers these recorded attempts. Missing, inconsistent or inaccessible sources produce `UNVERIFIED` and exit code 2. If an upstream API rate-limits the request, retry after its limit resets.
