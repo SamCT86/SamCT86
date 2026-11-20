@@ -14,7 +14,7 @@ I have **11 merged upstream pull requests across three independently maintained 
 
 **1. A green release run could finish before package publishing did.** The upstream fix puts the requested tag and its publishing jobs in one GitHub Actions run. The [historical publish job](https://github.com/LunaStev/binlayout/actions/runs/36327486327/job/108643013538) and [registry v0.1.0](https://crates.io/crates/binlayout/0.1.0) predate the fix. [Binlayout #39 — approved and merged](https://github.com/LunaStev/binlayout/pull/39#pullrequestreview-5346324297) · [Release evidence](proof/binlayout-release-evidence.md).
 
-**2. A scheduler silently lost a job uniqueness guard.** A shared Go option slice could be overwritten during scheduling. A one-line capacity-bound fix and regression test preserve the caller's `Unique` option. [Gombit #521 — approved and merged](https://github.com/gombit-dev/gombit/pull/521) · [How it was tested](proof/dispatchat-slice-aliasing.md).
+**2. A crashing worker could send the same job past its retry limit.** The upstream fix stops an over-budget crash redelivery before the handler runs again. The case shows the hosted Redis checks and a separate replay where three workers were terminated and no fourth handler call occurred. [Gombit #525 — approved and merged](https://github.com/gombit-dev/gombit/pull/525#pullrequestreview-5355526242) · [Crash redelivery evidence](proof/gombit-crash-redelivery.md).
 
 **3. SQLite schema reset could leave user tables behind.** `_` in SQL `LIKE` is a wildcard, so an unsafe filter treated names such as `sqlitex_cache` as reserved. A precise escape and native SQLite test check both user objects and `sqlite_sequence`. [Gombit #651 — approved and merged](https://github.com/gombit-dev/gombit/pull/651) · [How it was tested](proof/sqlite-schema-reset.md).
 
@@ -23,7 +23,7 @@ I have **11 merged upstream pull requests across three independently maintained 
 
 **Gombit**
 
-- [#521 — fix: preserve caller options in DispatchAt](https://github.com/gombit-dev/gombit/pull/521)
+- [#521 — fix: preserve caller options in DispatchAt](https://github.com/gombit-dev/gombit/pull/521) · [How it was tested](proof/dispatchat-slice-aliasing.md)
 - [#525 — fix: stop crash redelivery after MaxAttempts](https://github.com/gombit-dev/gombit/pull/525)
 - [#534 — fix: retry each failed job once per invocation](https://github.com/gombit-dev/gombit/pull/534)
 - [#535 — fix: treat dev null stdin as non-interactive](https://github.com/gombit-dev/gombit/pull/535)
