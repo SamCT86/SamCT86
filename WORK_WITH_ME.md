@@ -16,14 +16,14 @@ If a green run can mean only that a job started, I'll trace one workflow from th
 
 ### CI audit sample
 
-**Question:** Did Binlayout v0.1.0 reach crates.io, and what does the newer release workflow prove?
+**Question:** Did Binlayout v0.1.0 reach crates.io, and what did CI on the newer revision prove?
 
 | Verdict | Evidence | Decision |
 | --- | --- | --- |
 | Historical publication confirmed | The [release job](https://github.com/LunaStev/binlayout/actions/runs/36326644015/job/108640668072) created the tag and release. A separate [publish job](https://github.com/LunaStev/binlayout/actions/runs/36327486327/job/108643013538) succeeded, and the [registry](https://crates.io/crates/binlayout/0.1.0) lists the exact version. | Verify publication with the job and the received version. |
 | New workflow reviewed and tested | The maintainer approved [PR #39](https://github.com/LunaStev/binlayout/pull/39). The new path connects the release and publishing jobs. [Merge CI](https://github.com/LunaStev/binlayout/actions/runs/36504021539) ran the release-workflow tests. | Verify publishing and registry readback on the next new version. Check whether old tags contain the release helpers before retrying. |
 
-[See the exact commit, checksums and negative controls](proof/binlayout-release-evidence.md).
+[Run the recorded audit yourself](proof/binlayout-release-evidence.md#run-the-audit-yourself) or [inspect the commit and negative controls](proof/binlayout-release-evidence.md).
 
 ## Option B — One-defect fix sprint
 
