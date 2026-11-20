@@ -67,7 +67,7 @@ Open the [synthetic outcome lab](https://samct86.github.io/machineoutcome-case-s
 | **No readback** | `UNKNOWN` · `READBACK_INCOMPLETE` | Reconcile with the provider before deciding whether to retry. |
 | **Wrong-attempt evidence** | `FAILED` · `EVIDENCE_ATTEMPT_MISMATCH` | Reject the receipt and block retries based on it. |
 
-The lab uses synthetic state and never calls a provider. To scope a trial for your workflow, [share the action, the evidence you can read, and what a duplicate would cost](#contact).
+The lab uses synthetic state and never calls a provider. To scope a trial, [email one workflow](mailto:sarmadtawfeek@gmail.com?subject=Agent%20evidence%20trial&body=Which%20action%20should%20be%20verified%3F%0D%0A%0D%0AWhat%20evidence%20can%20your%20team%20read%20back%3F%0D%0A%0D%0AWhat%20would%20happen%20if%20the%20action%20ran%20twice%3F%0D%0A%0D%0AA%20public%20example%20or%20a%20short%20description%20is%20enough.%20Please%20leave%20out%20credentials%20and%20private%20data.) with the action, the evidence you can read, and what would happen if it ran twice. A public example or a short description is enough.
 
 ## Why these are credible starting points
 
