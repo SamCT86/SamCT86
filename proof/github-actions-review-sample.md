@@ -2,7 +2,7 @@
 
 **Decision.** Use the Binlayout check to verify the audit script's behavior. Confirm the actual release through the publishing run and the package registry. A reviewer can reproduce both decisions from public sources.
 
-**Scope.** One workflow in this portfolio, its offline tests, and the two public Binlayout runs the audit examines. I framed the review, checked the evidence and directed the AI-assisted implementation.
+**Scope.** One workflow in this portfolio, its offline tests, and the two public Binlayout runs the audit examines. Sarmad sets the scope for the AI-assisted portfolio work. The sources below show the checks behind the findings.
 
 | Priority | Finding | Evidence and action |
 | --- | --- | --- |
