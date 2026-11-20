@@ -63,4 +63,4 @@ My contribution is **problem framing, AI-agent direction, acceptance criteria, e
 
 **Potential starting points:** an Agent Reliability/CI Evidence Audit, a tightly scoped bug-fix sprint, or an AI-native product trial with measurable acceptance criteria. The right scope and commercial terms depend on your problem; I do not imply previous paid engagements or customer adoption without evidence.
 
-**[Compare three bounded engagement options](WORK_WITH_ME.md)** · **[Email a concrete problem](mailto:sarmadtawfeek@gmail.com?subject=Scope%20a%20technical%20engagement)** · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Website](https://www.sarmadtawfeek.com)
+**[Compare three bounded engagement options](WORK_WITH_ME.md)** · [Try the agent evidence trial](WORK_WITH_ME.md#try-the-evidence-trial) · **[Email a concrete problem](mailto:sarmadtawfeek@gmail.com?subject=Scope%20a%20technical%20engagement)** · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Website](https://www.sarmadtawfeek.com)
