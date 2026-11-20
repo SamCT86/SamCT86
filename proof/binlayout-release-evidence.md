@@ -36,11 +36,21 @@ For source provenance, compare the downloaded archive's SHA-256 with the registr
 
 ## Run the audit yourself
 
-Open [the verifier](verify_binlayout_release.py), download the raw file, and run it with Python 3.11 or later.
+Open the [pinned verifier](https://raw.githubusercontent.com/SamCT86/SamCT86/bc85b205f0ce8995ba0a219696de3ce396b44f12/proof/verify_binlayout_release.py) and save it as `verify_binlayout_release.py`. Run it from that folder with Python 3.11 or later.
+
+On Linux or macOS, run
 
 ```sh
 python3 verify_binlayout_release.py
 ```
+
+In Windows PowerShell, run
+
+```powershell
+py -3 verify_binlayout_release.py
+```
+
+If Windows has Python installed without the `py` launcher, use `python verify_binlayout_release.py`.
 
 The verifier reads eight public GitHub and crates.io sources, pins both run attempts to their workflow revisions, and compares the crate checksum and embedded commit with the registry records and release tag. It uses the Python standard library, needs no credentials, and reads the crate metadata without installing it.
 
