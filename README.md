@@ -43,13 +43,15 @@ I have **11 merged upstream pull requests across three independently maintained 
 
 </details>
 
-## Open engineering work you can inspect
+## Try the three pinned projects
 
-**[TrustPR — evidence receipts for pull requests](https://github.com/SamCT86/trustpr-action).** A free MIT-licensed GitHub Action that reports observed diff/check evidence and what's unknown. [Install guide](https://github.com/SamCT86/trustpr-action/blob/main/START-HERE.md) · [Marketplace listing](https://github.com/marketplace/actions/trustpr-evidence-receipt). The current v0.1.1 prerelease is **not** an independent security gate: [PR-editable workflow and required-check trust remain unresolved](https://github.com/SamCT86/trustpr-action/issues/53).
+**[Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study) — check an agent's answer before accepting it.** Run synthetic cases with unbound evidence, incomplete provider output and abstention. [Run the local tests and evals](https://github.com/SamCT86/agent-forecast-foundry-case-study#try-it-locally).
 
-**[MachineOutcome — reconcile before retry](https://github.com/SamCT86/machineoutcome-case-study).** Public MIT-licensed synthetic demo of a difficult distributed-systems case: a timeout does not prove that an external side effect failed. [Run the browser demo](https://samct86.github.io/machineoutcome-case-study/). The private runtime is separate; no live customer outcome is claimed.
+**[MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) — read back the outcome before retrying.** In the synthetic demo, compare a timeout with confirmed state, missing readback, and evidence from the wrong attempt. [Open the browser demo](https://samct86.github.io/machineoutcome-case-study/).
 
-**[Transaction Lab — unsafe retries and duplicate effects](https://github.com/SamCT86/agent-cash-cow-os).** An inspectable synthetic evaluation of payment-timeout scenarios, provider readback and replay decisions. [Open the lab](https://www.sarmadtawfeek.com/agent-cash-cow). It is not a production payment processor.
+**[TrustPR](https://github.com/SamCT86/trustpr-action) — inspect what a pull-request check actually observed.** The read-only Action reports diff and check evidence. The maintainer-run example shows why the collector can finish green while test execution is still unknown. v0.1.1 is a prerelease. [See the hosted example](https://github.com/SamCT86/trustpr-action/blob/main/REAL-PUBLIC-EXAMPLE.md) · [Install guide](https://github.com/SamCT86/trustpr-action/blob/main/START-HERE.md) · [Merge-gate limitation](https://github.com/SamCT86/trustpr-action/issues/53).
+
+Related reference: [Transaction Lab](https://github.com/SamCT86/agent-cash-cow-os) uses synthetic payment timeouts to illustrate when a retry could duplicate an effect.
 
 ## How I approach a technical problem
 
