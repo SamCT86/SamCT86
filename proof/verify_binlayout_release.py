@@ -112,6 +112,18 @@ def inspect(data):
         jobs = exact_jobs(run, data[label + "_jobs"], identity)
         report[label] = {"run_id": run["id"], "attempt": run["run_attempt"], "workflow_commit": run["head_sha"],
                          "workflow": run["path"], **publish_evidence(run, jobs, registry)}
+
+    historical = report["historical"]
+    require(historical["publish"] == "SUCCESS_RECORDED" and historical["job_id"] == 108643013538,
+            "Historical publish job no longer shows the recorded successful step")
+    require(historical["registry_created_during_step"], "Registry creation falls outside the historical publish step")
+
+    tested = report["tested"]
+    require(tested["publish"] == "NO_PUBLISH_STEP_IN_OBSERVED_ATTEMPT",
+            "Merge CI unexpectedly contains a publish step")
+    require(tested["jobs"] == 4 and data["tested_attempt"]["conclusion"] == "success"
+            and all(job["conclusion"] == "success" for job in data["tested_jobs"]["jobs"]),
+            "Merge CI no longer shows four successful verification jobs")
     return report
 
 
