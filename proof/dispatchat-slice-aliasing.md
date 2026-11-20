@@ -32,3 +32,5 @@ The full slice expression caps capacity at length, causing `append` to allocate 
 ## What a buyer can infer
 
 The portfolio shows a specific failure mode—shared mutable option storage—with a compact mechanistic correction and a falsifiable test. It **does not** prove broad individual Go expertise or production reliability without further assessment. AI agents performed implementation coding under Sarmad's direction; attribution and claims remain explicit.
+
+Related case on retry policy and failure classification. [When a crashing worker bypassed its retry limit](gombit-crash-redelivery.md)
