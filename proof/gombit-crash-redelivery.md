@@ -29,8 +29,15 @@ go test -count=10 -run '^(TestWorkerStopsCrashRedeliveryPastMaxAttempts|TestWork
 
 The exhausted delivery is still labeled `handler` in the inspected v0.9.0 source, even though the handler did not return an error. This can send an operator toward the wrong cause. The test checks the retry ceiling, failure reason and log attempt count. It leaves the failure kind unasserted. Before using that label for alert routing, I would test the failed record and log fields together on the lease-expiry path. [Tagged worker](https://github.com/gombit-dev/gombit/blob/dbf4d5b3a3f0788befa61882278e741376b8627d/jobs/worker.go#L215-L248) · [Failed-record construction](https://github.com/gombit-dev/gombit/blob/dbf4d5b3a3f0788befa61882278e741376b8627d/jobs/worker.go#L420-L434) · [Kind contract](https://github.com/gombit-dev/gombit/blob/dbf4d5b3a3f0788befa61882278e741376b8627d/jobs/errors.go#L20-L33)
 
-### Follow-up evidence on the current upstream source
+### Distinguishing worker loss from a handler error
 
-A later replay at `4cac8335f5ad506dc4653499f74110fb8e248053` reproduced the `handler` label in both Memory and Redis. Three independent worker processes entered the handler and were terminated with SIGKILL while using Redis. The fourth reservation was set aside without calling the handler. A local candidate preserved the retry decision while recording `lease_expired` in the failed record and terminal log. The isolated jobs suite passed 143 test and subtest outcomes. Upstream acceptance of the follow-up remains open. [Review that requested the follow-up](https://github.com/gombit-dev/gombit/pull/525#pullrequestreview-5376994985)
+An AI-assisted replay exercised [upstream `b9173f4`](https://github.com/gombit-dev/gombit/commit/b9173f473979785b6ef4d7f838f2b31ddacf99af) and a local follow-up, using Redis 7.4.12 and Valkey 8.1.12 in a synthetic Linux lab. In each run, three workers entered the handler and were killed. The fourth delivery was set aside before the handler ran.
+
+| Worker build | Failed record from `gombit jobs inspect` | Terminal worker log |
+| --- | --- | --- |
+| Upstream `b9173f4` | `handler` | `handler` |
+| Local follow-up | `lease_expired` | `lease_expired` |
+
+The failure kind tells an operator where to start investigating. An expired lease points to the previous worker's exit or lease renewal. A handler error points to code that actually ran. The local follow-up passed the jobs suite on both backends and kept the same attempt limit. The follow-up awaits upstream review and release. [Review that identified the diagnostic gap](https://github.com/gombit-dev/gombit/pull/525#pullrequestreview-5376994985)
 
 The case uses public source, review and hosted CI. Production incident, adoption and financial outcomes are unknown. Sarmad scoped the contribution, directed the AI-assisted implementation and evaluated the evidence.
