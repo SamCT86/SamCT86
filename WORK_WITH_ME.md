@@ -57,6 +57,18 @@ For a written deliverable, [read a sample GitHub Actions review](proof/github-ac
 
 **Acceptance:** the test harness can reproduce the agreed success and failure cases, with no unsupported claims of provider attestation or real customer outcomes.
 
+### Try the evidence trial
+
+Open the [synthetic outcome lab](https://samct86.github.io/machineoutcome-case-study/#lab). Run these presets and open **Inspect exact verifier input and output** to see what drove each result.
+
+| Preset | Expected result | Next action |
+| --- | --- | --- |
+| **Timeout, but change happened** | `VERIFIED` · `POSTSTATE_CONFIRMED` | Keep the verified result and do not retry. |
+| **No readback** | `UNKNOWN` · `READBACK_INCOMPLETE` | Reconcile with the provider before deciding whether to retry. |
+| **Wrong-attempt evidence** | `FAILED` · `EVIDENCE_ATTEMPT_MISMATCH` | Reject the receipt and block retries based on it. |
+
+The lab uses synthetic state and never calls a provider. To scope a trial for your workflow, [share the action, the evidence you can read, and what a duplicate would cost](#contact).
+
 ## Why these are credible starting points
 
 Independently accepted OSS contributions include [a job option aliasing fix](proof/dispatchat-slice-aliasing.md), [fail-before-write module validation](proof/go-module-validation.md), and [SQLite reset semantics](proof/sqlite-schema-reset.md). They prove specific reviewed work, not blanket expertise in every platform or claimed customer deployment.
