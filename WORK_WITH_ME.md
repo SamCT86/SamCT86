@@ -6,20 +6,24 @@ My role is to define the problem, direct AI-agent implementation, establish acce
 
 ## Option A — Reliability / CI evidence audit
 
-**Best for:** a team unsure whether CI/release checks or an agent workflow actually enforce its stated safeguards.
+If a green run can mean only that a job started, I'll trace one workflow from the triggering commit to the result your team needs to verify, such as a package reaching its registry. The review starts with existing logs and source.
 
-**Bounded scope:** one repository or one clearly identified workflow, agreed upfront. Read-only source/evidence review by default; any live exploit reproduction or privileged configuration change requires separate authorized scope.
+- **Send one example.** Share a public workflow or run URL and the result you expected it to prove. For a private workflow, start with a brief description and share access through your own approved route after we agree scope.
+- **Get a decision you can act on.** You'll receive the exact commit, check and output examined, the most consequential gap and a prioritized fix. I include a repeatable check where the evidence permits it and identify any missing access or data separately.
+- **Accept the review when your engineer can follow the evidence.** They can locate the source and runs behind each finding, repeat the check for a confirmed gap, and see the next change to make.
 
-**Proposed deliverable:**
+[**Send one workflow and the result you need to verify**](mailto:sarmadtawfeek@gmail.com?subject=One-workflow%20CI%20evidence%20review&body=Public%20workflow%20or%20run%20URL%20%28or%20short%20description%29%3A%0AExpected%20result%3A%0A%0APlease%20leave%20out%20credentials%20and%20confidential%20material.)
 
-- A map of the claimed trust boundary and the exact source/checks that implement it.
-- Two or three high-impact falsifiers grounded in real failure modes, such as PR-editable workflow trust, skipped/neutral jobs, lost acknowledgements and duplicate effects.
-- A prioritized findings register: confirmed defect vs plausible risk vs unknown, with reproducible steps when safe.
-- An owner-facing decision: repair now, accept documented risk, or stop under-evidenced claims.
+### CI audit sample
 
-**Acceptance:** the client can reproduce each confirmed finding, trace it to source and understand the remaining unknowns. This is not a security certification or penetration-test guarantee.
+**Question:** Did Binlayout v0.1.0 reach crates.io, and what does the newer release workflow prove?
 
-**Example:** On Binlayout, the original release run could succeed before crate publishing finished. A maintainer-approved change puts the requested tag and publishing jobs in the same run. [See the original runs, regression tests and release boundary](proof/binlayout-release-evidence.md).
+| Verdict | Evidence | Decision |
+| --- | --- | --- |
+| Historical publication confirmed | The [release job](https://github.com/LunaStev/binlayout/actions/runs/36326644015/job/108640668072) created the tag and release. A separate [publish job](https://github.com/LunaStev/binlayout/actions/runs/36327486327/job/108643013538) succeeded, and the [registry](https://crates.io/crates/binlayout/0.1.0) lists the exact version. | Verify publication with the job and the received version. |
+| New workflow reviewed and tested | The maintainer approved [PR #39](https://github.com/LunaStev/binlayout/pull/39). The new path connects the release and publishing jobs. [Merge CI](https://github.com/LunaStev/binlayout/actions/runs/36504021539) ran the release-workflow tests. | Verify publishing and registry readback on the next new version. Check whether old tags contain the release helpers before retrying. |
+
+[See the exact commit, checksums and negative controls](proof/binlayout-release-evidence.md).
 
 ## Option B — One-defect fix sprint
 
