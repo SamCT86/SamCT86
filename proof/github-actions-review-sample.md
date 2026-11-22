@@ -18,6 +18,12 @@
 
 In [TrustPR's first-party consumer PR](https://github.com/SamCT86/trustpr-consumer-canary/pull/6), a [read-only workflow at the PR commit](https://github.com/SamCT86/trustpr-consumer-canary/blob/b4a85b7c352d924b57d4ad0ddd9bc0db11c23d5b/.github/workflows/trustpr.yml) ran a pinned Action against the proposed change. The [GitHub-hosted collector job](https://github.com/SamCT86/trustpr-consumer-canary/actions/runs/39475939069/job/118811794878) succeeded and recorded `PARTIAL`, `UNAUTHENTICATED` and `POLICY_UNBOUND`. The [published example](https://github.com/SamCT86/trustpr-action/blob/6457de77ff1a3666674fac5e48dc6ec11f85186e/REAL-PUBLIC-EXAMPLE.md) explains which check it saw. The receipt records no established test execution or merge authorization. The PR was closed without merging.
 
+## GitHub release and registry evidence
+
+SeraPlot's [v2.8.7 release job](https://github.com/feur25/Sera/actions/runs/40190234399/job/121163246988) passed. Its [GitHub release](https://github.com/feur25/Sera/releases/tag/v2.8.7) contains a Linux wheel and a macOS wheel. Both wheels report `seraplot 2.8.7.post1` in their embedded package metadata. On 22 November 2026, the [exact PyPI version](https://pypi.org/project/seraplot/2.8.7.post1/#files) listed a Windows CPython 3.11 wheel and a source distribution. The [maintainer's issue](https://github.com/feur25/Sera/issues/22) tracks the missing PyPI step.
+
+For the next release, check the tag against the wheel version before upload. Then compare the published filenames and SHA-256 digests with the staged wheels.
+
 ## What I would examine in an agent workflow
 
 I would trace the trigger and data sources through the job's token, secrets, runtime and outbound actions. For any step that reads issue text or web pages, I would trace where that content can affect commands, file writes or external actions. Each finding would cite the workflow and step, explain the observed impact and give a way to verify the proposed change.
