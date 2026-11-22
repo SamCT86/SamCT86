@@ -14,6 +14,10 @@
 
 [Run the pinned verifier](binlayout-release-evidence.md#run-the-audit-yourself). A successful run reports `SUCCESS_RECORDED` for the historical publish and `NO_PUBLISH_STEP_IN_OBSERVED_ATTEMPT` for the later verification run.
 
+## A successful evidence collector with a partial report
+
+In [TrustPR's first-party consumer PR](https://github.com/SamCT86/trustpr-consumer-canary/pull/6), a [read-only workflow at the PR commit](https://github.com/SamCT86/trustpr-consumer-canary/blob/b4a85b7c352d924b57d4ad0ddd9bc0db11c23d5b/.github/workflows/trustpr.yml) ran a pinned Action against the proposed change. The [GitHub-hosted collector job](https://github.com/SamCT86/trustpr-consumer-canary/actions/runs/39475939069/job/118811794878) succeeded and recorded `PARTIAL`, `UNAUTHENTICATED` and `POLICY_UNBOUND`. The [published example](https://github.com/SamCT86/trustpr-action/blob/6457de77ff1a3666674fac5e48dc6ec11f85186e/REAL-PUBLIC-EXAMPLE.md) explains which check it saw. The receipt records no established test execution or merge authorization. The PR was closed without merging.
+
 ## What I would examine in an agent workflow
 
 I would trace the trigger and data sources through the job's token, secrets, runtime and outbound actions. For any step that reads issue text or web pages, I would trace where that content can affect commands, file writes or external actions. Each finding would cite the workflow and step, explain the observed impact and give a way to verify the proposed change.
