@@ -1,6 +1,8 @@
 from contextlib import redirect_stderr, redirect_stdout
+from hashlib import sha256
 import io
 import json
+import tarfile
 import unittest
 from unittest.mock import patch
 
@@ -27,6 +29,53 @@ def attempt(label, job_ids, publish_conclusion=None):
             "completed_at": "2026-09-27T14:53:02Z",
         })
     return {label + "_attempt": run, label + "_jobs": {"total_count": len(jobs), "jobs": jobs}}
+
+
+def registry_fixture(*, embedded_commit=verifier.SOURCE):
+    record = json.dumps({"git": {"sha1": embedded_commit}}).encode()
+    payload = io.BytesIO()
+    with tarfile.open(fileobj=payload, mode="w:gz") as archive:
+        member = tarfile.TarInfo(f"{verifier.CRATE}-{verifier.VERSION}/.cargo_vcs_info.json")
+        member.size = len(record)
+        archive.addfile(member, io.BytesIO(record))
+
+    blob = payload.getvalue()
+    digest = sha256(blob).hexdigest()
+    index = [{"name": verifier.CRATE, "vers": verifier.VERSION, "cksum": digest, "yanked": False}]
+    version = {
+        "crate": verifier.CRATE,
+        "num": verifier.VERSION,
+        "checksum": digest,
+        "created_at": "2026-09-27T14:53:01Z",
+        "yanked": False,
+    }
+    tag = {"ref": f"refs/tags/v{verifier.VERSION}", "object": {"type": "commit", "sha": verifier.SOURCE}}
+    return index, blob, version, tag
+
+
+class RegistryEvidenceTest(unittest.TestCase):
+    def test_archive_bytes_and_source_match(self):
+        index, blob, version, tag = registry_fixture()
+        result = verifier.registry_evidence(index, blob, version, tag)
+        self.assertEqual(result["sha256"], sha256(blob).hexdigest())
+        self.assertEqual(result["source_commit"], verifier.SOURCE)
+
+    def test_registry_index_checksum_conflicts(self):
+        index, blob, version, tag = registry_fixture()
+        index[0]["cksum"] = "0" * 64
+        with self.assertRaisesRegex(verifier.EvidenceError, "Registry digest mismatch"):
+            verifier.registry_evidence(index, blob, version, tag)
+
+    def test_registry_api_checksum_conflicts(self):
+        index, blob, version, tag = registry_fixture()
+        version["checksum"] = "0" * 64
+        with self.assertRaisesRegex(verifier.EvidenceError, "Registry digest mismatch"):
+            verifier.registry_evidence(index, blob, version, tag)
+
+    def test_valid_checksum_cannot_prove_a_different_embedded_commit(self):
+        index, blob, version, tag = registry_fixture(embedded_commit="f" * 40)
+        with self.assertRaisesRegex(verifier.EvidenceError, "Archive provenance differs"):
+            verifier.registry_evidence(index, blob, version, tag)
 
 
 class AuditExitStatusTest(unittest.TestCase):
