@@ -47,7 +47,7 @@ I have **11 merged upstream pull requests across three independently maintained 
 
 **[Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study) — check an agent's answer before accepting it.** Run synthetic cases with unbound evidence, incomplete provider output and abstention. [Run the local tests and evals](https://github.com/SamCT86/agent-forecast-foundry-case-study#try-it-locally).
 
-**[MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) — read back the outcome before retrying.** In the synthetic demo, compare a timeout with confirmed state, missing readback, and evidence from the wrong attempt. [Open the browser demo](https://samct86.github.io/machineoutcome-case-study/).
+**[MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) — read back the outcome before retrying.** In the synthetic demo, compare a timeout with confirmed state, missing readback, and evidence from the wrong attempt. [Open the browser demo](https://machineoutcome.com/#lab).
 
 **[TrustPR](https://github.com/SamCT86/trustpr-action) — inspect what a pull-request check actually observed.** The read-only Action reports diff and check evidence. The maintainer-run example shows why the collector can finish green while test execution is still unknown. v0.1.1 is a prerelease. [See the hosted example](https://github.com/SamCT86/trustpr-action/blob/main/REAL-PUBLIC-EXAMPLE.md) · [Install guide](https://github.com/SamCT86/trustpr-action/blob/main/START-HERE.md) · [Merge-gate limitation](https://github.com/SamCT86/trustpr-action/issues/53).
 
@@ -63,4 +63,4 @@ My contribution is **problem framing, AI-agent direction, acceptance criteria, e
 
 **Potential starting points:** an Agent Reliability/CI Evidence Audit, a tightly scoped bug-fix sprint, or an AI-native product trial with measurable acceptance criteria. The right scope and commercial terms depend on your problem; I do not imply previous paid engagements or customer adoption without evidence.
 
-**[Compare three bounded engagement options](WORK_WITH_ME.md)** · [Try the agent evidence trial](WORK_WITH_ME.md#try-the-evidence-trial) · **[Email a concrete problem](mailto:sarmadtawfeek@gmail.com?subject=Scope%20a%20technical%20engagement)** · [LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) · [Website](https://www.sarmadtawfeek.com)
+**[Compare three bounded engagement options](WORK_WITH_ME.md)** · [Try the agent evidence trial](WORK_WITH_ME.md#try-the-evidence-trial) · **[Email a concrete problem](mailto:sarmadtawfeek@gmail.com?subject=Scope%20a%20technical%20engagement)** · [LinkedIn](https://www.linkedin.com/in/sam-tawfeek-496197207/) · [Website](https://sarmadtawfeek.se/)

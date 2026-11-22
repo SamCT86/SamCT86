@@ -59,7 +59,7 @@ For a written deliverable, [read a sample GitHub Actions review](proof/github-ac
 
 ### Try the evidence trial
 
-Open the [synthetic outcome lab](https://samct86.github.io/machineoutcome-case-study/#lab). Run these presets and open **Inspect exact verifier input and output** to see what drove each result.
+Open the [synthetic outcome lab](https://machineoutcome.com/#lab). Run these presets and open **Inspect exact verifier input and output** to see what drove each result.
 
 | Preset | Expected result | Next action |
 | --- | --- | --- |
@@ -75,6 +75,6 @@ Independently accepted OSS contributions include [a job option aliasing fix](pro
 
 ## Contact
 
-[**Email a focused engagement question**](mailto:sarmadtawfeek@gmail.com?subject=AI%20reliability%20engagement) or [contact me on LinkedIn](https://www.linkedin.com/in/sarmad-lundberg-tawfeek-496197207/) with the public repo/workflow, the failure or goal, and what acceptance would look like. Do **not** send credentials, customer data, private URLs or confidential source in an initial message.
+[**Email a focused engagement question**](mailto:sarmadtawfeek@gmail.com?subject=AI%20reliability%20engagement) or [contact me on LinkedIn](https://www.linkedin.com/in/sam-tawfeek-496197207/) with the public repo/workflow, the failure or goal, and what acceptance would look like. Do **not** send credentials, customer data, private URLs or confidential source in an initial message.
 
 Scope, permissions, terms, price, payment entity and timelines are agreed separately by the authorized owners. These options are examples, not binding offers or verified market demand.
