@@ -24,6 +24,15 @@ SeraPlot's [v2.8.7 release job](https://github.com/feur25/Sera/actions/runs/4019
 
 For the next release, check the tag against the wheel version before upload. Then compare the published filenames and SHA-256 digests with the staged wheels.
 
+## Keep release notes tied to the shipped package
+
+A failed [Gutenberg release job](https://github.com/WordPress/gutenberg/actions/runs/31575283775/job/94046967379) had already published packages before a Git backport stopped. The npm archives for [Components 39.0.0](https://registry.npmjs.org/@wordpress%2fcomponents/39.0.0) and [DataViews 18.0.0](https://registry.npmjs.org/@wordpress%2fdataviews/18.0.0) matched the registry hashes and contained the exact changelog bytes from the [published commit](https://github.com/WordPress/gutenberg/commit/989764d42ff93e33684aaf0b96a5b7f3d9bbff52).
+
+**Finding.** The [first correction attempt](https://github.com/WordPress/gutenberg/commit/d36bccf8ca2069f0e058feb36c88e2840eeb414c) changed the released sections in four of 125 package changelogs. The [merged correction](https://github.com/WordPress/gutenberg/pull/81502) restored those sections. The failure and proposed check were previously documented in [Gutenberg #81506](https://github.com/WordPress/gutenberg/issues/81506).
+
+**Decision.** Compare released sections with the published commit before pushing a backport. Push the exact revision that passed. An AI-assisted local prototype rejected a clean cherry-pick that silently moved an unreleased entry into a shipped version. It also pushed the verified revision when a synthetic local branch moved after inspection. Upstream review and hosted testing would precede adoption.
+
+
 ## What I would examine in an agent workflow
 
 I would trace the trigger and data sources through the job's token, secrets, runtime and outbound actions. For any step that reads issue text or web pages, I would trace where that content can affect commands, file writes or external actions. Each finding would cite the workflow and step, explain the observed impact and give a way to verify the proposed change.
