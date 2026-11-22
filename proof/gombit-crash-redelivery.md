@@ -27,7 +27,7 @@ go test -count=10 -run '^(TestWorkerStopsCrashRedeliveryPastMaxAttempts|TestWork
 
 ## Where the evidence stopped
 
-The exhausted delivery is still labeled `handler` in the inspected v0.9.0 source, even though the handler did not return an error. This can send an operator toward the wrong cause. The test checks the retry ceiling, failure reason and log attempt count. It leaves the failure kind unasserted. Before using that label for alert routing, I would test the failed record and log fields together on the lease-expiry path. [Tagged worker](https://github.com/gombit-dev/gombit/blob/dbf4d5b3a3f0788befa61882278e741376b8627d/jobs/worker.go#L215-L248) · [Failed-record construction](https://github.com/gombit-dev/gombit/blob/dbf4d5b3a3f0788befa61882278e741376b8627d/jobs/worker.go#L420-L434) · [Kind contract](https://github.com/gombit-dev/gombit/blob/dbf4d5b3a3f0788befa61882278e741376b8627d/jobs/errors.go#L20-L33)
+The over-budget lease redelivery is labeled `handler` in the failed-job record and terminal worker log, although the handler did not return an error. The `jobs/` Git tree at [v0.10.0](https://github.com/gombit-dev/gombit/releases/tag/v0.10.0) is identical to v0.9.0 (`0b9120dd`). The retry-ceiling test checks the failure reason and attempt count. It leaves the failure kind unasserted. [Tagged reservation and log](https://github.com/gombit-dev/gombit/blob/46dfb8c8f6d0d4ccf5ca7e8642a6f19db04e7ff4/jobs/worker.go#L215-L248) · [Failed-record construction](https://github.com/gombit-dev/gombit/blob/46dfb8c8f6d0d4ccf5ca7e8642a6f19db04e7ff4/jobs/worker.go#L420-L434) · [Kind contract](https://github.com/gombit-dev/gombit/blob/46dfb8c8f6d0d4ccf5ca7e8642a6f19db04e7ff4/jobs/errors.go#L20-L33)
 
 ### Distinguishing worker loss from a handler error
 
@@ -38,6 +38,6 @@ An AI-assisted replay exercised [upstream `b9173f4`](https://github.com/gombit-d
 | Upstream `b9173f4` | `handler` | `handler` |
 | Local follow-up | `lease_expired` | `lease_expired` |
 
-The failure kind tells an operator where to start investigating. An expired lease points to the previous worker's exit or lease renewal. A handler error points to code that actually ran. The local follow-up passed the jobs suite on both backends and kept the same attempt limit. The follow-up awaits upstream review and release. [Review that identified the diagnostic gap](https://github.com/gombit-dev/gombit/pull/525#pullrequestreview-5376994985)
+The failure kind tells an operator where to start investigating. An expired lease points to the previous worker's exit or lease renewal. A handler error points to code that actually ran. The local follow-up passed the jobs suite on both backends and kept the same attempt limit. As of 22 November 2026, the follow-up is [open draft #679](https://github.com/gombit-dev/gombit/pull/679). [All 28 hosted jobs passed](https://github.com/gombit-dev/gombit/actions/runs/44864537549) on `3b802ff4`. GitHub reports merge conflicts against current main. Maintainer review and release of the follow-up are pending. [Review that identified the diagnostic gap](https://github.com/gombit-dev/gombit/pull/525#pullrequestreview-5376994985)
 
 The case uses public source, review and hosted CI. Production incident, adoption and financial outcomes are unknown. Sarmad scoped the contribution, directed the AI-assisted implementation and evaluated the evidence.
