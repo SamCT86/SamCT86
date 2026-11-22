@@ -19,6 +19,22 @@ def attempt(label, job_ids, publish_conclusion=None):
              steps=[{"name": "Check evidence", "status": "completed", "conclusion": "success"}])
         for job_id in job_ids
     ]
+    if label == "tested":
+        named_steps = (
+            ("test (stable)", ("Run python3 -m unittest discover -s .github/scripts -p 'test_*.py'",
+                               "Run cargo test --locked", "Run cargo test --locked --no-default-features")),
+            ("test (1.85.0)", ("Run cargo test --locked", "Run cargo test --locked --no-default-features")),
+            ("test-32-bit", ("Run cargo test --locked --target i686-unknown-linux-gnu",
+                             "Run cargo test --locked --target i686-unknown-linux-gnu --no-default-features")),
+            ("lint", ("Run cargo fmt --check",
+                      "Run cargo clippy --locked --all-targets --all-features -- -D warnings",
+                      "Run cargo clippy --locked --all-targets --no-default-features -- -D warnings")),
+        )
+        for job, (name, steps) in zip(jobs, named_steps):
+            job["name"] = name
+            job["steps"] = [
+                {"name": step, "status": "completed", "conclusion": "success"} for step in steps
+            ]
     if publish_conclusion is not None:
         jobs[0]["steps"].append({
             "name": verifier.PUBLISH_STEP,
@@ -81,7 +97,7 @@ class RegistryEvidenceTest(unittest.TestCase):
 class AuditExitStatusTest(unittest.TestCase):
     def run_audit(self, *, historical_publish="success", tested_publish=None,
                   created_at="2026-09-27T14:53:01Z", tested_ids=(1, 2, 3, 4),
-                  tested_conclusion="success"):
+                  tested_conclusion="success", mutate_jobs=None):
         data = {
             **attempt("historical", (108643013538,), historical_publish),
             **attempt("tested", tested_ids, tested_publish),
@@ -91,6 +107,8 @@ class AuditExitStatusTest(unittest.TestCase):
             "release_tag": {},
         }
         data["tested_attempt"]["conclusion"] = tested_conclusion
+        if mutate_jobs is not None:
+            mutate_jobs(data["tested_jobs"]["jobs"])
         stdout, stderr = io.StringIO(), io.StringIO()
         with (
             patch("sys.argv", ["verify_binlayout_release.py"]),
@@ -109,6 +127,25 @@ class AuditExitStatusTest(unittest.TestCase):
         report = json.loads(stdout)
         self.assertTrue(report["historical"]["registry_created_during_step"])
         self.assertEqual(report["tested"]["publish"], "NO_PUBLISH_STEP_IN_OBSERVED_ATTEMPT")
+
+    def test_green_job_totals_do_not_prove_the_expected_work_ran(self):
+        def drop_job_identity(jobs):
+            jobs[0]["name"] = "Unrelated job"
+
+        def skip_core_step(jobs):
+            jobs[0]["steps"][0]["conclusion"] = "skipped"
+
+        def omit_core_step(jobs):
+            jobs[0]["steps"].pop(0)
+
+        def duplicate_core_step(jobs):
+            jobs[0]["steps"].append(dict(jobs[0]["steps"][0]))
+
+        for change in (drop_job_identity, skip_core_step, omit_core_step, duplicate_core_step):
+            with self.subTest(change=change.__name__):
+                status, stdout, stderr = self.run_audit(mutate_jobs=change)
+                self.assertEqual((status, stdout), (2, ""))
+                self.assertTrue(stderr.startswith("UNVERIFIED: "))
 
     def test_changed_evidence_exits_unverified(self):
         cases = {

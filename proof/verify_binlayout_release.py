@@ -32,6 +32,30 @@ EXACT_ATTEMPTS = {
 }
 
 
+# The recorded merge attempt has four distinct jobs. Bind each job to the
+# verification it ran, since a successful job can contain skipped steps.
+CARGO_TESTS = (
+    "Run cargo test --locked",
+    "Run cargo test --locked --no-default-features",
+)
+MERGE_CI_STEPS = {
+    "test (stable)": (
+        "Run python3 -m unittest discover -s .github/scripts -p 'test_*.py'",
+        *CARGO_TESTS,
+    ),
+    "test (1.85.0)": CARGO_TESTS,
+    "test-32-bit": (
+        "Run cargo test --locked --target i686-unknown-linux-gnu",
+        "Run cargo test --locked --target i686-unknown-linux-gnu --no-default-features",
+    ),
+    "lint": (
+        "Run cargo fmt --check",
+        "Run cargo clippy --locked --all-targets --all-features -- -D warnings",
+        "Run cargo clippy --locked --all-targets --no-default-features -- -D warnings",
+    ),
+}
+
+
 class EvidenceError(ValueError):
     pass
 
@@ -101,6 +125,19 @@ def publish_evidence(run, jobs, registry):
             "run_conclusion": run["conclusion"], "job_conclusion": job["conclusion"]}
 
 
+def require_merge_ci(run, jobs):
+    job_names = {job["name"] for job in jobs}
+    require(len(jobs) == len(MERGE_CI_STEPS) and job_names == MERGE_CI_STEPS.keys(),
+            "Merge CI does not contain the four expected verification jobs")
+    require(run["conclusion"] == "success", "Merge CI did not succeed")
+    for job in jobs:
+        name = job["name"]
+        require(job["conclusion"] == "success", f"Merge CI job did not succeed: {name}")
+        for required_step in MERGE_CI_STEPS[name]:
+            conclusions = [step["conclusion"] for step in job["steps"] if step["name"] == required_step]
+            require(conclusions == ["success"], f"Merge CI {name}: expected one successful {required_step}")
+
+
 def inspect(data):
     registry = registry_evidence(
         [json.loads(line) for line in data["registry_index"].splitlines() if line.strip()],
@@ -121,9 +158,7 @@ def inspect(data):
     tested = report["tested"]
     require(tested["publish"] == "NO_PUBLISH_STEP_IN_OBSERVED_ATTEMPT",
             "Merge CI unexpectedly contains a publish step")
-    require(tested["jobs"] == 4 and data["tested_attempt"]["conclusion"] == "success"
-            and all(job["conclusion"] == "success" for job in data["tested_jobs"]["jobs"]),
-            "Merge CI no longer shows four successful verification jobs")
+    require_merge_ci(data["tested_attempt"], data["tested_jobs"]["jobs"])
     return report
 
 
