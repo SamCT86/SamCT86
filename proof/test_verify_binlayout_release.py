@@ -97,7 +97,7 @@ class RegistryEvidenceTest(unittest.TestCase):
 class AuditExitStatusTest(unittest.TestCase):
     def run_audit(self, *, historical_publish="success", tested_publish=None,
                   created_at="2026-09-27T14:53:01Z", tested_ids=(1, 2, 3, 4),
-                  tested_conclusion="success", mutate_jobs=None):
+                  tested_conclusion="success", mutate_jobs=None, historical_run="success", historical_job="success"):
         data = {
             **attempt("historical", (108643013538,), historical_publish),
             **attempt("tested", tested_ids, tested_publish),
@@ -107,6 +107,8 @@ class AuditExitStatusTest(unittest.TestCase):
             "release_tag": {},
         }
         data["tested_attempt"]["conclusion"] = tested_conclusion
+        data["historical_attempt"]["conclusion"] = historical_run
+        data["historical_jobs"]["jobs"][0]["conclusion"] = historical_job
         if mutate_jobs is not None:
             mutate_jobs(data["tested_jobs"]["jobs"])
         stdout, stderr = io.StringIO(), io.StringIO()
@@ -146,6 +148,13 @@ class AuditExitStatusTest(unittest.TestCase):
                 status, stdout, stderr = self.run_audit(mutate_jobs=change)
                 self.assertEqual((status, stdout), (2, ""))
                 self.assertTrue(stderr.startswith("UNVERIFIED: "))
+
+    def test_failed_historical_run_or_job_cannot_exit_zero(self):
+        for case in ({"historical_run": "failure"}, {"historical_job": "failure"}):
+            with self.subTest(**case):
+                status, stdout, stderr = self.run_audit(**case)
+                self.assertEqual((status, stdout), (2, ""))
+                self.assertIn("UNVERIFIED:", stderr)
 
     def test_changed_evidence_exits_unverified(self):
         cases = {
