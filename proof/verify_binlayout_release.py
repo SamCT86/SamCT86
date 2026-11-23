@@ -147,6 +147,10 @@ def inspect(data):
     for label, identity in EXACT_ATTEMPTS.items():
         run = data[label + "_attempt"]
         jobs = exact_jobs(run, data[label + "_jobs"], identity)
+        if label == "historical":
+            require(run["conclusion"] == "success", "Historical publish workflow did not succeed")
+            require(all(job["conclusion"] == "success" for job in jobs),
+                    "Historical publish workflow has a failed job")
         report[label] = {"run_id": run["id"], "attempt": run["run_attempt"], "workflow_commit": run["head_sha"],
                          "workflow": run["path"], **publish_evidence(run, jobs, registry)}
 
